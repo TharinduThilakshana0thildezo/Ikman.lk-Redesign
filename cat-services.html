@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Services</span></div>
+      <h1>Services</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=svc-1" data-id="svc-1" data-title="Moving & Transport" data-price="15000" data-location="Colombo" data-img="https://picsum.photos/seed/move/600/400">
+          <button class="fav-btn" data-fav-id="svc-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/move/600/400" alt="Moving & Transport" />
+          <div class="content">
+            <div class="title">Moving & Transport</div>
+            <div class="meta"><span>From Rs. 15,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=svc-2" data-id="svc-2" data-title="Plumbing Service" data-price="5000" data-location="Kandy" data-img="https://picsum.photos/seed/plumb/600/400">
+          <button class="fav-btn" data-fav-id="svc-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/plumb/600/400" alt="Plumbing Service" />
+          <div class="content">
+            <div class="title">Plumbing Service</div>
+            <div class="meta"><span>From Rs. 5,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=svc-3" data-id="svc-3" data-title="AC Repair" data-price="8000" data-location="Galle" data-img="https://picsum.photos/seed/acrep/600/400">
+          <button class="fav-btn" data-fav-id="svc-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/acrep/600/400" alt="AC Repair" />
+          <div class="content">
+            <div class="title">AC Repair</div>
+            <div class="meta"><span>From Rs. 8,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=svc-4" data-id="svc-4" data-title="House Cleaning" data-price="7000" data-location="Kurunegala" data-img="https://picsum.photos/seed/clean/600/400">
+          <button class="fav-btn" data-fav-id="svc-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/clean/600/400" alt="House Cleaning" />
+          <div class="content">
+            <div class="title">House Cleaning</div>
+            <div class="meta"><span>From Rs. 7,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=svc-1" data-id="svc-1" data-title="Moving & Transport" data-price="15000" data-location="Colombo" data-img="https://example.com/images/moving_transport.jpg">
+          <button class="fav-btn" data-fav-id="svc-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/moving_transport.jpg" alt="Moving & Transport" />
+          <div class="content">
+            <div class="title">Moving & Transport</div>
+            <div class="meta"><span>From Rs. 15,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-2" data-id="svc-2" data-title="Plumbing Service" data-price="5000" data-location="Kandy" data-img="https://example.com/images/plumbing_service.jpg">
+          <button class="fav-btn" data-fav-id="svc-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/plumbing_service.jpg" alt="Plumbing Service" />
+          <div class="content">
+            <div class="title">Plumbing Service</div>
+            <div class="meta"><span>From Rs. 5,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-3" data-id="svc-3" data-title="AC Repair & Maintenance" data-price="8000" data-location="Galle" data-img="https://example.com/images/ac_repair.jpg">
+          <button class="fav-btn" data-fav-id="svc-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/ac_repair.jpg" alt="AC Repair & Maintenance" />
+          <div class="content">
+            <div class="title">AC Repair & Maintenance</div>
+            <div class="meta"><span>From Rs. 8,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-4" data-id="svc-4" data-title="House Cleaning" data-price="7000" data-location="Kurunegala" data-img="https://example.com/images/house_cleaning.jpg">
+          <button class="fav-btn" data-fav-id="svc-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/house_cleaning.jpg" alt="House Cleaning" />
+          <div class="content">
+            <div class="title">House Cleaning</div>
+            <div class="meta"><span>From Rs. 7,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-5" data-id="svc-5" data-title="Electrical Repair & Wiring" data-price="6500" data-location="Matara" data-img="https://example.com/images/electrical_repair.jpg">
+          <button class="fav-btn" data-fav-id="svc-5">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/electrical_repair.jpg" alt="Electrical Repair & Wiring" />
+          <div class="content">
+            <div class="title">Electrical Repair & Wiring</div>
+            <div class="meta"><span>From Rs. 6,500</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-6" data-id="svc-6" data-title="Car Wash & Detailing" data-price="2500" data-location="Colombo" data-img="https://example.com/images/car_wash.jpg">
+          <button class="fav-btn" data-fav-id="svc-6">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/car_wash.jpg" alt="Car Wash & Detailing" />
+          <div class="content">
+            <div class="title">Car Wash & Detailing</div>
+            <div class="meta"><span>From Rs. 2,500</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-7" data-id="svc-7" data-title="Pest Control Service" data-price="9000" data-location="Gampaha" data-img="https://example.com/images/pest_control.jpg">
+          <button class="fav-btn" data-fav-id="svc-7">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/pest_control.jpg" alt="Pest Control Service" />
+          <div class="content">
+            <div class="title">Pest Control Service</div>
+            <div class="meta"><span>From Rs. 9,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-8" data-id="svc-8" data-title="Computer Repair & Service" data-price="5500" data-location="Kandy" data-img="https://example.com/images/computer_repair.jpg">
+          <button class="fav-btn" data-fav-id="svc-8">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/computer_repair.jpg" alt="Computer Repair & Service" />
+          <div class="content">
+            <div class="title">Computer Repair & Service</div>
+            <div class="meta"><span>From Rs. 5,500</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-9" data-id="svc-9" data-title="Web & Mobile App Development" data-price="20000" data-location="Colombo" data-img="https://example.com/images/web_app_dev.jpg">
+          <button class="fav-btn" data-fav-id="svc-9">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/web_app_dev.jpg" alt="Web & Mobile App Development" />
+          <div class="content">
+            <div the="title">Web & Mobile App Development</div>
+            <div the="meta"><span>From Rs. 20,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-10" data-id="svc-10" data-title="Graphic Design & Branding" data-price="8000" data-location="Colombo" data-img="https://example.com/images/graphic_design.jpg">
+          <button class="fav-btn" data-fav-id="svc-10">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/graphic_design.jpg" alt="Graphic Design & Branding" />
+          <div class="content">
+            <div the="title">Graphic Design & Branding</div>
+            <div the="meta"><span>From Rs. 8,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-11" data-id="svc-11" data-title="Home Tutoring / Lessons" data-price="3000" data-location="Negombo" data-img="https://example.com/images/tutoring.jpg">
+          <button class="fav-btn" data-fav-id="svc-11">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/tutoring.jpg" alt="Home Tutoring / Lessons" />
+          <div class="content">
+            <div the="title">Home Tutoring / Lessons</div>
+            <div the="meta"><span>From Rs. 3,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-12" data-id="svc-12" data-title="Event Planner & Management" data-price="50000" data-location="Colombo" data-img="https://example.com/images/event_planner.jpg">
+          <button class="fav-btn" data-fav-id="svc-12">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/event_planner.jpg" alt="Event Planner & Management" />
+          <div class="content">
+            <div the="title">Event Planner & Management</div>
+            <div the="meta"><span>From Rs. 50,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-13" data-id="svc-13" data-title="Interior Design Service" data-price="25000" data-location="Galle" data-img="https://example.com/images/interior_design.jpg">
+          <button class="fav-btn" data-fav-id="svc-13">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/interior_design.jpg" alt="Interior Design Service" />
+          <div class="content">
+            <div the="title">Interior Design Service</div>
+            <div the="meta"><span>From Rs. 25,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-14" data-id="svc-14" data-title="Gardening & Landscaping" data-price="12000" data-location="Matara" data-img="https://example.com/images/gardening_landscaping.jpg">
+          <button class="fav-btn" data-fav-id="svc-14">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/gardening_landscaping.jpg" alt="Gardening & Landscaping" />
+          <div class="content">
+            <div the="title">Gardening & Landscaping</div>
+            <div the="meta"><span>From Rs. 12,000</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-15" data-id="svc-15" data-title="Door & Window Repair" data-price="5500" data-location="Kurunegala" data-img="https://example.com/images/door_window_repair.jpg">
+          <button class="fav-btn" data-fav-id="svc-15">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/door_window_repair.jpg" alt="Door & Window Repair" />
+          <div class="content">
+            <div the="title">Door & Window Repair</div>
+            <div the="meta"><span>From Rs. 5,500</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-16" data-id="svc-16" data-title="Roof Leak Repair" data-price="9500" data-location="Colombo" data-img="https://example.com/images/roof_repair.jpg">
+          <button class="fav-btn" data-fav-id="svc-16">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/roof_repair.jpg" alt="Roof Leak Repair" />
+          <div class="content">
+            <div the="title">Roof Leak Repair</div>
+            <div the="meta"><span>From Rs. 9,500</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-17" data-id="svc-17" data-title="Laundry & Dry Clean Service" data-price="3000" data-location="Gampaha" data-img="https://example.com/images/laundry_service.jpg">
+          <button class="fav-btn" data-fav-id="svc-17">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/laundry_service.jpg" alt="Laundry & Dry Clean Service" />
+          <div class="content">
+            <div the="title">Laundry & Dry Clean Service</div>
+            <div the="meta"><span>From Rs. 3,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-18" data-id="svc-18" data-title="Carpentry & Woodwork" data-price="8000" data-location="Negombo" data-img="https://example.com/images/carpentry_woodwork.jpg">
+          <button class="fav-btn" data-fav-id="svc-18">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/carpentry_woodwork.jpg" alt="Carpentry & Woodwork" />
+          <div class="content">
+            <div the="title">Carpentry & Woodwork</div>
+            <div the="meta"><span>From Rs. 8,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-19" data-id="svc-19" data-title="Legal / Notary Service" data-price="6000" data-location="Colombo" data-img="https://example.com/images/legal_notary.jpg">
+          <button class="fav-btn" data-fav-id="svc-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/legal_notary.jpg" alt="Legal / Notary Service" />
+          <div class="content">
+            <div the="title">Legal / Notary Service</div>
+            <div the="meta"><span>From Rs. 6,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-20" data-id="svc-20" data-title="Accounting & Bookkeeping" data-price="7000" data-location="Colombo" data-img="https://example.com/images/accounting_bookkeeping.jpg">
+          <button class="fav-btn" data-fav-id="svc-20">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/accounting_bookkeeping.jpg" alt="Accounting & Bookkeeping" />
+          <div class="content">
+            <div the="title">Accounting & Bookkeeping</div>
+            <div the="meta"><span>From Rs. 7,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-21" data-id="svc-21" data-title="Tailoring & Alterations" data-price="3500" data-location="Kandy" data-img="https://example.com/images/tailoring_alterations.jpg">
+          <button class="fav-btn" data-fav-id="svc-21">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/tailoring_alterations.jpg" alt="Tailoring & Alterations" />
+          <div class="content">
+            <div the="title">Tailoring & Alterations</div>
+            <div the="meta"><span>From Rs. 3,500</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-22" data-id="svc-22" data-title="Home Moving Cleaning Package" data-price="12000" data-location="Kurunegala" data-img="https://example.com/images/moving_cleaning.jpg">
+          <button class="fav-btn" data-fav-id="svc-22">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/moving_cleaning.jpg" alt="Home Moving Cleaning Package" />
+          <div class="content">
+            <div the="title">Home Moving Cleaning Package</div>
+            <div the="meta"><span>From Rs. 12,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-23" data-id="svc-23" data-title="Pool Maintenance Service" data-price="10000" data-location="Colombo" data-img="https://example.com/images/pool_maintenance.jpg">
+          <button class="fav-btn" data-fav-id="svc-23">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/pool_maintenance.jpg" alt="Pool Maintenance Service" />
+          <div class="content">
+            <div the="title">Pool Maintenance Service</div>
+            <div the="meta"><span>From Rs. 10,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-24" data-id="svc-24" data-title="Roof & Gutter Cleaning" data-price="5000" data-location="Galle" data-img="https://example.com/images/gutter_cleaning.jpg">
+          <button class="fav-btn" data-fav-id="svc-24">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/gutter_cleaning.jpg" alt="Roof & Gutter Cleaning" />
+          <div class="content">
+            <div the="title">Roof & Gutter Cleaning</div>
+            <div the="meta"><span>From Rs. 5,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-25" data-id="svc-25" data-title="Mobile Phone Repair Service" data-price="4500" data-location="Colombo" data-img="https://example.com/images/mobile_repair.jpg">
+          <button class="fav-btn" data-fav-id="svc-25">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/mobile_repair.jpg" alt="Mobile Phone Repair Service" />
+          <div class="content">
+            <div the="title">Mobile Phone Repair Service</div>
+            <div the="meta"><span>From Rs. 4,500</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-26" data-id="svc-26" data-title="Taxi / Car Hire Service" data-price="2000" data-location="Negombo" data-img="https://example.com/images/taxi_service.jpg">
+          <button class="fav-btn" data-fav-id="svc-26">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/taxi_service.jpg" alt="Taxi / Car Hire Service" />
+          <div class="content">
+            <div the="title">Taxi / Car Hire Service</div>
+            <div the="meta"><span>From Rs. 2,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-27" data-id="svc-27" data-title="Health & Beauty at Home" data-price="6000" data-location="Colombo" data-img="https://example.com/images/beauty_service.jpg">
+          <button class="fav-btn" data-fav-id="svc-27">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/beauty_service.jpg" alt="Health & Beauty at Home" />
+          <div class="content">
+            <div the="title">Health & Beauty at Home</div>
+            <div the="meta"><span>From Rs. 6,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-28" data-id="svc-28" data-title="Event & Wedding Photography" data-price="20000" data-location="Galle" data-img="https://example.com/images/photography_wedding.jpg">
+          <button class="fav-btn" data-fav-id="svc-28">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/photography_wedding.jpg" alt="Event & Wedding Photography" />
+          <div class="content">
+            <div the="title">Event & Wedding Photography</div>
+            <div the="meta"><span>From Rs. 20,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-29" data-id="svc-29" data-title="Video Editing & Post Production" data-price="12000" data-location="Colombo" data-img="https://example.com/images/video_editing.jpg">
+          <button class="fav-btn" data-fav-id="svc-29">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/video_editing.jpg" alt="Video Editing & Post Production" />
+          <div class="content">
+            <div the="title">Video Editing & Post Production</div>
+            <div the="meta"><span>From Rs. 12,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-30" data-id="svc-30" data-title="SEO & Digital Marketing Service" data-price="15000" data-location="Kandy" data-img="https://example.com/images/seo_marketing.jpg">
+          <button class="fav-btn" data-fav-id="svc-30">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/seo_marketing.jpg" alt="SEO & Digital Marketing Service" />
+          <div class="content">
+            <div the="title">SEO & Digital Marketing Service</div>
+            <div the="meta"><span>From Rs. 15,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=svc-24" data-id="svc-24" data-title="Roof & Gutter Cleaning" data-price="5000" data-location="Galle" data-img="https://example.com/images/gutter_cleaning.jpg">
+          <button class="fav-btn" data-fav-id="svc-24">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/gutter_cleaning.jpg" alt="Roof & Gutter Cleaning" />
+          <div class="content">
+            <div the="title">Roof & Gutter Cleaning</div>
+            <div the="meta"><span>From Rs. 5,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=svc-25" data-id="svc-25" data-title="Mobile Phone Repair Service" data-price="4500" data-location="Colombo" data-img="https://example.com/images/mobile_repair.jpg">
+          <button class="fav-btn" data-fav-id="svc-25">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/mobile_repair.jpg" alt="Mobile Phone Repair Service" />
+          <div class="content">
+            <div the="title">Mobile Phone Repair Service</div>
+            <div the="meta"><span>From Rs. 4,500</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

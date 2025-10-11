@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Property – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Property</span></div>
+      <h1>Property</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=prop-1" data-id="prop-1" data-title="3BR Apartment" data-price="45000000" data-location="Colombo" data-img="https://picsum.photos/seed/apt1/600/400">
+          <button class="fav-btn" data-fav-id="prop-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/apt1/600/400" alt="3BR Apartment" />
+          <div class="content">
+            <div class="title">3BR Apartment</div>
+            <div class="meta"><span>Rs. 45,000,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-2" data-id="prop-2" data-title="House in Kandy" data-price="35000000" data-location="Kandy" data-img="https://picsum.photos/seed/housek/600/400">
+          <button class="fav-btn" data-fav-id="prop-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/housek/600/400" alt="House in Kandy" />
+          <div class="content">
+            <div class="title">House in Kandy</div>
+            <div class="meta"><span>Rs. 35,000,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-3" data-id="prop-3" data-title="Beachfront Land" data-price="15000000" data-location="Galle" data-img="https://picsum.photos/seed/land/600/400">
+          <button class="fav-btn" data-fav-id="prop-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/land/600/400" alt="Beachfront Land" />
+          <div class="content">
+            <div class="title">Beachfront Land</div>
+            <div class="meta"><span>Rs. 15,000,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-4" data-id="prop-4" data-title="Commercial Space" data-price="65000000" data-location="Colombo" data-img="https://picsum.photos/seed/office/600/400">
+          <button class="fav-btn" data-fav-id="prop-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/office/600/400" alt="Commercial Space" />
+          <div class="content">
+            <div class="title">Commercial Space</div>
+            <div class="meta"><span>Rs. 65,000,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-5" data-id="prop-5" data-title="Luxury Villa in Dehiwala" data-price="120000000" data-location="Dehiwala" data-img="images/villa_dehiwala.jpg">
+          <button class="fav-btn" data-fav-id="prop-5">❤</button>
+          <img loading="lazy" class="thumb" src="images/villa_dehiwala.jpg" alt="Luxury Villa in Dehiwala" />
+          <div class="content">
+            <div class="title">Luxury Villa in Dehiwala</div>
+            <div class="meta"><span>Rs. 120,000,000</span><span>Dehiwala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-6" data-id="prop-6" data-title="4BR House in Nugegoda" data-price="85_000_000" data-location="Nugegoda" data-img="images/house_nugegoda.jpg">
+          <button class="fav-btn" data-fav-id="prop-6">❤</button>
+          <img loading="lazy" class="thumb" src="images/house_nugegoda.jpg" alt="4BR House in Nugegoda" />
+          <div class="content">
+            <div class="title">4BR House in Nugegoda</div>
+            <div class="meta"><span>Rs. 85,000,000</span><span>Nugegoda</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-7" data-id="prop-7" data-title="Sea View Apartment in Mt Lavinia" data-price="95_000_000" data-location="Mount Lavinia" data-img="images/apartment_mtlav.jpg">
+          <button class="fav-btn" data-fav-id="prop-7">❤</button>
+          <img loading="lazy" class="thumb" src="images/apartment_mtlav.jpg" alt="Sea View Apartment in Mt Lavinia" />
+          <div class="content">
+            <div class="title">Sea View Apartment in Mt Lavinia</div>
+            <div class="meta"><span>Rs. 95,000,000</span><span>Mount Lavinia</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-8" data-id="prop-8" data-title="Penthouse in Colombo 3" data-price="140_000_000" data_location="Colombo 3" data-img="images/penthouse_c3.jpg">
+          <button class="fav-btn" data-fav-id="prop-8">❤</button>
+          <img loading="lazy" class="thumb" src="images/penthouse_c3.jpg" alt="Penthouse in Colombo 3" />
+          <div class="content">
+            <div class="title">Penthouse in Colombo 3</div>
+            <div class="meta"><span>Rs. 140,000,000</span><span>Colombo 3</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-9" data-id="prop-9" data-title="3BR Condo in Kottawa" data-price="60_000_000" data-location="Kottawa" data-img="images/condo_kottawa.jpg">
+          <button class="fav-btn" data-fav-id="prop-9">❤</button>
+          <img loading="lazy" class="thumb" src="images/condo_kottawa.jpg" alt="3BR Condo in Kottawa" />
+          <div class="content">
+            <div class="title">3BR Condo in Kottawa</div>
+            <div class="meta"><span>Rs. 60,000,000</span><span>Kottawa</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-10" data-id="prop-10" data-title="5BR Bungalow in Maharagama" data-price="110_000_000" data-location="Maharagama" data-img="images/bungalow_mahara.jpg">
+          <button class="fav-btn" data-fav-id="prop-10">❤</button>
+          <img loading="lazy" class="thumb" src="images/bungalow_mahara.jpg" alt="5BR Bungalow in Maharagama" />
+          <div class="content">
+            <div class="title">5BR Bungalow in Maharagama</div>
+            <div class="meta"><span>Rs. 110,000,000</span><span>Maharagama</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-11" data-id="prop-11" data-title="Hill Country Villa in Kandy" data-price="130_000_000" data-location="Kandy" data-img="images/villa_kandy.jpg">
+          <button class="fav-btn" data-fav-id="prop-11">❤</button>
+          <img loading="lazy" class="thumb" src="images/villa_kandy.jpg" alt="Hill Country Villa in Kandy" />
+          <div class="content">
+            <div class="title">Hill Country Villa in Kandy</div>
+            <div class="meta"><span>Rs. 130,000,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-12" data-id="prop-12" data-title="Garden House in Galle" data-price="72_000_000" data-location="Galle" data-img="images/house_galle.jpg">
+          <button class="fav-btn" data-fav-id="prop-12">❤</button>
+          <img loading="lazy" class="thumb" src="images/house_galle.jpg" alt="Garden House in Galle" />
+          <div class="content">
+            <div class="title">Garden House in Galle</div>
+            <div class="meta"><span>Rs. 72,000,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-13" data-id="prop-13" data-title="Lakefront Land in Kurunegala" data-price="50_000_000" data-location="Kurunegala" data-img="images/land_kurunegala.jpg">
+          <button class="fav-btn" data-fav-id="prop-13">❤</button>
+          <img loading="lazy" class="thumb" src="images/land_kurunegala.jpg" alt="Lakefront Land in Kurunegala" />
+          <div class="content">
+            <div class="title">Lakefront Land in Kurunegala</div>
+            <div class="meta"><span>Rs. 50,000,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-14" data-id="prop-14" data-title="Shop & Apartment Combo in Jaffna" data-price="90_000_000" data-location="Jaffna" data-img="images/shop_jaffna.jpg">
+          <button class="fav-btn" data-fav-id="prop-14">❤</button>
+          <img loading="lazy" class="thumb" src="images/shop_jaffna.jpg" alt="Shop & Apartment Combo in Jaffna" />
+          <div class="content">
+            <div class="title">Shop & Apartment Combo in Jaffna</div>
+            <div class="meta"><span>Rs. 90,000,000</span><span>Jaffna</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-15" data-id="prop-15" data-title="Modern Flat in Matara" data-price="45_000_000" data-location="Matara" data-img="images/flat_matara.jpg">
+          <button class="fav-btn" data-fav-id="prop-15">❤</button>
+          <img loading="lazy" class="thumb" src="images/flat_matara.jpg" alt="Modern Flat in Matara" />
+          <div class="content">
+            <div class="title">Modern Flat in Matara</div>
+            <div class="meta"><span>Rs. 45,000,000</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-16" data-id="prop-16" data-title="Beach House in Hikkaduwa" data-price="135_000_000" data-location="Hikkaduwa" data-img="images/house_hikkaduwa.jpg">
+          <button class="fav-btn" data-fav-id="prop-16">❤</button>
+          <img loading="lazy" class="thumb" src="images/house_hikkaduwa.jpg" alt="Beach House in Hikkaduwa" />
+          <div class="content">
+            <div class="title">Beach House in Hikkaduwa</div>
+            <div class="meta"><span>Rs. 135,000,000</span><span>Hikkaduwa</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-17" data-id="prop-17" data-title="47-perch Plot in Nuwara Eliya" data-price="80_000_000" data-location="Nuwara Eliya" data-img="images/plot_nuwara.jpg">
+          <button class="fav-btn" data-fav-id="prop-17">❤</button>
+          <img loading="lazy" class="thumb" src="images/plot_nuwara.jpg" alt="47-perch Plot in Nuwara Eliya" />
+          <div class="content">
+            <div class="title">47-perch Plot in Nuwara Eliya</div>
+            <div class="meta"><span>Rs. 80,000,000</span><span>Nuwara Eliya</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-18" data-id="prop-18" data-title="Studio Apartment in Batticaloa" data-price="25_000_000" data-location="Batticaloa" data-img="images/studio_batti.jpg">
+          <button class="fav-btn" data-fav-id="prop-18">❤</button>
+          <img loading="lazy" class="thumb" src="images/studio_batti.jpg" alt="Studio Apartment in Batticaloa" />
+          <div class="content">
+            <div class="title">Studio Apartment in Batticaloa</div>
+            <div class="meta"><span>Rs. 25,000,000</span><span>Batticaloa</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-19" data-id="prop-19" data-title="Luxury Villa in Negombo" data-price="125_000_000" data-location="Negombo" data-img="images/villa_negombo.jpg">
+          <button class="fav-btn" data-fav-id="prop-19">❤</button>
+          <img loading="lazy" class="thumb" src="images/villa_negombo.jpg" alt="Luxury Villa in Negombo" />
+          <div class="content">
+            <div class="title">Luxury Villa in Negombo</div>
+            <div class="meta"><span>Rs. 125,000,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-20" data-id="prop-20" data-title="Modern Apartment in Colombo 7" data-price="150_000_000" data-location="Colombo 7" data-img="images/apartment_col7.jpg">
+          <button class="fav-btn" data-fav-id="prop-20">❤</button>
+          <img loading="lazy" class="thumb" src="images/apartment_col7.jpg" alt="Modern Apartment in Colombo 7" />
+          <div class="content">
+            <div class="title">Modern Apartment in Colombo 7</div>
+            <div class="meta"><span>Rs. 150,000,000</span><span>Colombo 7</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-19" data-id="prop-19" data-title="Luxury Villa in Negombo" data-price="125000000" data-location="Negombo" data-img="https://www.vrbo.com/en-au/holiday-rental/p9176719">
+          <button class="fav-btn" data-fav-id="prop-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://www.vrbo.com/en-au/holiday-rental/p9176719" alt="Luxury Villa in Negombo" />
+          <div class="content">
+            <div class="title">Luxury Villa in Negombo</div>
+            <div class="meta"><span>Rs. 125,000,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-19" data-id="prop-19" data-title="Luxury Villa in Negombo" data-price="125_000_000" data-location="Negombo" data-img="images/villa_negombo.jpg">
+          <button class="fav-btn" data-fav-id="prop-19">❤</button>
+          <img loading="lazy" class="thumb" src="images/villa_negombo.jpg" alt="Luxury Villa in Negombo" />
+          <div class="content">
+            <div class="title">Luxury Villa in Negombo</div>
+            <div class="meta"><span>Rs. 125,000,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=prop-20" data-id="prop-20" data-title="Modern Apartment in Colombo 7" data-price="150_000_000" data-location="Colombo 7" data-img="images/apartment_col7.jpg">
+          <button class="fav-btn" data-fav-id="prop-20">❤</button>
+          <img loading="lazy" class="thumb" src="images/apartment_col7.jpg" alt="Modern Apartment in Colombo 7" />
+          <div class="content">
+            <div class="title">Modern Apartment in Colombo 7</div>
+            <div class="meta"><span>Rs. 150,000,000</span><span>Colombo 7</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=prop-19" data-id="prop-19" data-title="Luxury Villa in Negombo" data-price="125000000" data-location="Negombo" data-img="https://www.vrbo.com/en-au/holiday-rental/p9176719">
+          <button class="fav-btn" data-fav-id="prop-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://www.vrbo.com/en-au/holiday-rental/p9176719" alt="Luxury Villa in Negombo" />
+          <div class="content">
+            <div class="title">Luxury Villa in Negombo</div>
+            <div class="meta"><span>Rs. 125,000,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+
+
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

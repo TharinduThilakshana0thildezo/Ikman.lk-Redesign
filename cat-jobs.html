@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jobs – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Jobs</span></div>
+      <h1>Jobs</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=job-1" data-id="job-1" data-title="Software Engineer" data-price="150000" data-location="Colombo" data-img="https://picsum.photos/seed/job1/600/400">
+          <button class="fav-btn" data-fav-id="job-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job1/600/400" alt="Software Engineer" />
+          <div class="content">
+            <div class="title">Software Engineer</div>
+            <div class="meta"><span>Up to Rs. 150,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=job-2" data-id="job-2" data-title="Sales Executive" data-price="90000" data-location="Galle" data-img="https://picsum.photos/seed/job2/600/400">
+          <button class="fav-btn" data-fav-id="job-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job2/600/400" alt="Sales Executive" />
+          <div class="content">
+            <div class="title">Sales Executive</div>
+            <div class="meta"><span>Up to Rs. 90,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=job-3" data-id="job-3" data-title="Graphic Designer" data-price="80000" data-location="Kandy" data-img="https://picsum.photos/seed/job3/600/400">
+          <button class="fav-btn" data-fav-id="job-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job3/600/400" alt="Graphic Designer" />
+          <div class="content">
+            <div class="title">Graphic Designer</div>
+            <div class="meta"><span>Up to Rs. 80,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=job-4" data-id="job-4" data-title="Accountant" data-price="120000" data-location="Kurunegala" data-img="https://picsum.photos/seed/job4/600/400">
+          <button class="fav-btn" data-fav-id="job-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job4/600/400" alt="Accountant" />
+          <div class="content">
+            <div class="title">Accountant</div>
+            <div class="meta"><span>Up to Rs. 120,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+        
+        <a class="listing-card fade-in" href="item.html?id=job-1" data-id="job-1" data-title="Software Engineer" data-price="150000" data-location="Colombo" data-img="https://picsum.photos/seed/job1/600/400">
+          <button class="fav-btn" data-fav-id="job-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job1/600/400" alt="Software Engineer" />
+          <div class="content">
+            <div class="title">Software Engineer</div>
+            <div class="meta"><span>Up to Rs. 150,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-2" data-id="job-2" data-title="Sales Executive" data-price="90000" data-location="Galle" data-img="https://picsum.photos/seed/job2/600/400">
+          <button class="fav-btn" data-fav-id="job-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job2/600/400" alt="Sales Executive" />
+          <div class="content">
+            <div class="title">Sales Executive</div>
+            <div class="meta"><span>Up to Rs. 90,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-3" data-id="job-3" data-title="Graphic Designer" data-price="80000" data-location="Kandy" data-img="https://picsum.photos/seed/job3/600/400">
+          <button class="fav-btn" data-fav-id="job-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job3/600/400" alt="Graphic Designer" />
+          <div class="content">
+            <div class="title">Graphic Designer</div>
+            <div class="meta"><span>Up to Rs. 80,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-4" data-id="job-4" data-title="Accountant" data-price="120000" data-location="Kurunegala" data-img="https://picsum.photos/seed/job4/600/400">
+          <button class="fav-btn" data-fav-id="job-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job4/600/400" alt="Accountant" />
+          <div class="content">
+            <div class="title">Accountant</div>
+            <div class="meta"><span>Up to Rs. 120,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-5" data-id="job-5" data-title="Customer Service Representative" data-price="70000" data-location="Negombo" data-img="https://picsum.photos/seed/job5/600/400">
+          <button class="fav-btn" data-fav-id="job-5">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job5/600/400" alt="Customer Service Representative" />
+          <div class="content">
+            <div class="title">Customer Service Representative</div>
+            <div class="meta"><span>Up to Rs. 70,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-6" data-id="job-6" data-title="Marketing Manager" data-price="180000" data-location="Colombo" data-img="https://picsum.photos/seed/job6/600/400">
+          <button class="fav-btn" data-fav-id="job-6">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job6/600/400" alt="Marketing Manager" />
+          <div class="content">
+            <div class="title">Marketing Manager</div>
+            <div class="meta"><span>Up to Rs. 180,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-7" data-id="job-7" data-title="Receptionist" data-price="60000" data-location="Matara" data-img="https://picsum.photos/seed/job7/600/400">
+          <button class="fav-btn" data-fav-id="job-7">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job7/600/400" alt="Receptionist" />
+          <div class="content">
+            <div class="title">Receptionist</div>
+            <div class="meta"><span>Up to Rs. 60,000</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-8" data-id="job-8" data-title="Data Entry Operator" data-price="55000" data-location="Anuradhapura" data-img="https://picsum.photos/seed/job8/600/400">
+          <button class="fav-btn" data-fav-id="job-8">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job8/600/400" alt="Data Entry Operator" />
+          <div class="content">
+            <div class="title">Data Entry Operator</div>
+            <div class="meta"><span>Up to Rs. 55,000</span><span>Anuradhapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-9" data-id="job-9" data-title="HR Assistant" data-price="75000" data-location="Gampaha" data-img="https://picsum.photos/seed/job9/600/400">
+          <button class="fav-btn" data-fav-id="job-9">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job9/600/400" alt="HR Assistant" />
+          <div class="content">
+            <div class="title">HR Assistant</div>
+            <div class="meta"><span>Up to Rs. 75,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-10" data-id="job-10" data-title="Store Keeper" data-price="65000" data-location="Kegalle" data-img="https://picsum.photos/seed/job10/600/400">
+          <button class="fav-btn" data-fav-id="job-10">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job10/600/400" alt="Store Keeper" />
+          <div class="content">
+            <div class="title">Store Keeper</div>
+            <div class="meta"><span>Up to Rs. 65,000</span><span>Kegalle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-11" data-id="job-11" data-title="Electrician" data-price="85000" data-location="Kalutara" data-img="https://picsum.photos/seed/job11/600/400">
+          <button class="fav-btn" data-fav-id="job-11">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job11/600/400" alt="Electrician" />
+          <div class="content">
+            <div class="title">Electrician</div>
+            <div class="meta"><span>Up to Rs. 85,000</span><span>Kalutara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-12" data-id="job-12" data-title="Chef" data-price="95000" data-location="Nuwara Eliya" data-img="https://picsum.photos/seed/job12/600/400">
+          <button class="fav-btn" data-fav-id="job-12">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job12/600/400" alt="Chef" />
+          <div class="content">
+            <div class="title">Chef</div>
+            <div class="meta"><span>Up to Rs. 95,000</span><span>Nuwara Eliya</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-13" data-id="job-13" data-title="Driver" data-price="70000" data-location="Ratnapura" data-img="https://picsum.photos/seed/job13/600/400">
+          <button class="fav-btn" data-fav-id="job-13">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job13/600/400" alt="Driver" />
+          <div class="content">
+            <div class="title">Driver</div>
+            <div class="meta"><span>Up to Rs. 70,000</span><span>Ratnapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-14" data-id="job-14" data-title="Security Officer" data-price="60000" data-location="Jaffna" data-img="https://picsum.photos/seed/job14/600/400">
+          <button class="fav-btn" data-fav-id="job-14">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job14/600/400" alt="Security Officer" />
+          <div class="content">
+            <div class="title">Security Officer</div>
+            <div class="meta"><span>Up to Rs. 60,000</span><span>Jaffna</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-15" data-id="job-15" data-title="Teacher" data-price="85000" data-location="Badulla" data-img="https://picsum.photos/seed/job15/600/400">
+          <button class="fav-btn" data-fav-id="job-15">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job15/600/400" alt="Teacher" />
+          <div class="content">
+            <div class="title">Teacher</div>
+            <div class="meta"><span>Up to Rs. 85,000</span><span>Badulla</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-16" data-id="job-16" data-title="Web Developer" data-price="160000" data-location="Colombo" data-img="https://picsum.photos/seed/job16/600/400">
+          <button class="fav-btn" data-fav-id="job-16">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job16/600/400" alt="Web Developer" />
+          <div class="content">
+            <div class="title">Web Developer</div>
+            <div class="meta"><span>Up to Rs. 160,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-17" data-id="job-17" data-title="Nurse" data-price="95000" data-location="Matale" data-img="https://picsum.photos/seed/job17/600/400">
+          <button class="fav-btn" data-fav-id="job-17">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job17/600/400" alt="Nurse" />
+          <div class="content">
+            <div class="title">Nurse</div>
+            <div class="meta"><span>Up to Rs. 95,000</span><span>Matale</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-18" data-id="job-18" data-title="Delivery Rider" data-price="70000" data-location="Hambantota" data-img="https://picsum.photos/seed/job18/600/400">
+          <button class="fav-btn" data-fav-id="job-18">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job18/600/400" alt="Delivery Rider" />
+          <div class="content">
+            <div class="title">Delivery Rider</div>
+            <div class="meta"><span>Up to Rs. 70,000</span><span>Hambantota</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-19" data-id="job-19" data-title="Cleaner" data-price="50000" data-location="Trincomalee" data-img="https://picsum.photos/seed/job19/600/400">
+          <button class="fav-btn" data-fav-id="job-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job19/600/400" alt="Cleaner" />
+          <div class="content">
+            <div class="title">Cleaner</div>
+            <div class="meta"><span>Up to Rs. 50,000</span><span>Trincomalee</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=job-20" data-id="job-20" data-title="Project Manager" data-price="200000" data-location="Colombo" data-img="https://picsum.photos/seed/job20/600/400">
+          <button class="fav-btn" data-fav-id="job-20">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/job20/600/400" alt="Project Manager" />
+          <div class="content">
+            <div class="title">Project Manager</div>
+            <div class="meta"><span>Up to Rs. 200,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

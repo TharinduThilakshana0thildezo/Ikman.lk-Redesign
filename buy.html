@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buy Item – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer>
+      window.addEventListener('DOMContentLoaded', function(){
+        const p = new URLSearchParams(location.search);
+        const id = p.get('id')||'item';
+        const title = p.get('title')||id.replace(/[-_]/g,' ');
+        const price = Number(p.get('price')||0);
+        document.getElementById('bt-title').textContent = title;
+        document.getElementById('bt-price').textContent = price.toLocaleString('en-LK',{style:'currency',currency:'LKR'});
+        document.getElementById('order').addEventListener('submit', function(e){
+          e.preventDefault();
+          alert('Congratulations! You bought the item.');
+          AppCore.clearCart(); AppCore.updateCartBadge();
+          location.href = 'profile.html';
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header" data-include="header.html"></div>
+    <main class="container" style="margin-top:20px">
+      <h2 style="margin:0 0 12px">Checkout</h2>
+      <section class="glass" style="padding:16px; display:grid; gap:12px">
+        <div style="display:flex; justify-content:space-between; align-items:center">
+          <div><strong id="bt-title">Item</strong></div>
+          <div id="bt-price">LKR 0.00</div>
+        </div>
+        <form id="order" class="grid" style="gap:10px; grid-template-columns: repeat(2, minmax(0,1fr))">
+          <div>
+            <label class="muted" for="name">Full name</label>
+            <input id="name" class="input" required />
+          </div>
+          <div>
+            <label class="muted" for="email">Email</label>
+            <input id="email" type="email" class="input" required />
+          </div>
+          <div>
+            <label class="muted" for="phone">Phone</label>
+            <input id="phone" class="input" required />
+          </div>
+          <div>
+            <label class="muted" for="address">Address</label>
+            <input id="address" class="input" required />
+          </div>
+          <div>
+            <label class="muted" for="city">City</label>
+            <input id="city" class="input" required />
+          </div>
+          <div>
+            <label class="muted" for="zip">Postal Code</label>
+            <input id="zip" class="input" required />
+          </div>
+          <div style="grid-column: span 2">
+            <label class="muted" for="notes">Notes (optional)</label>
+            <textarea id="notes" class="textarea" rows="4"></textarea>
+          </div>
+          <fieldset style="grid-column: span 2; border:none; padding:0; margin:0">
+            <legend class="muted" style="margin-bottom:6px">Payment</legend>
+            <div class="grid grid-3">
+              <label style="display:flex; gap:8px; align-items:center"><input type="radio" name="pay" checked /> Cash on Delivery</label>
+              <label style="display:flex; gap:8px; align-items:center"><input type="radio" name="pay" /> Card Payment</label>
+              <label style="display:flex; gap:8px; align-items:center"><input type="radio" name="pay" /> Bank Transfer</label>
+            </div>
+          </fieldset>
+          <div style="grid-column: span 2; display:flex; justify-content:flex-end; gap:8px">
+            <a class="btn btn-ghost" href="cart.html">Back to Cart</a>
+            <button class="btn btn-primary" type="submit">Buy</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <div id="footer" data-include="footer.html"></div>
+  </body>
+  </html>
+
+

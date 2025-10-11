@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Toyota Aqua 2018 – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/item.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/item.js"></script>
+  </head>
+  <body>
+    <div id="header" data-include="header.html"></div>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs">Home / <a href="cat-vehicles.html">Vehicles</a> / <span>Toyota Aqua 2018</span></div>
+      <div class="grid" style="grid-template-columns: 1.2fr 0.8fr; gap: 20px; align-items:start;" data-id="feat-1" data-price="4750000">
+        <section class="glass" style="padding:16px">
+          <div class="grid grid-3" id="gallery" style="grid-template-columns: 1fr 1fr 1fr">
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="Img/veh1.jpg" alt="Toyota Aqua 2018 1" />
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="https://picsum.photos/seed/aqua2/600/400" alt="Toyota Aqua 2018 2" />
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="https://picsum.photos/seed/aqua3/600/400" alt="Toyota Aqua 2018 3" />
+          </div>
+          <h1 id="item-title" style="margin-top:12px">Toyota Aqua 2018</h1>
+          <div class="badge">Verified Seller</div>
+          <div class="item-meta">
+            <div class="chip"><b>Location</b> Colombo</div>
+            <div class="chip"><b>Condition</b> Used</div>
+            <div class="chip"><b>Ownership</b> Second owner</div>
+            <div class="chip"><b>Mileage</b> Low</div>
+          </div>
+          <div class="specs">
+            <div class="spec"><span class="k">Make</span><span class="v">Toyota</span></div>
+            <div class="spec"><span class="k">Model</span><span class="v">Aqua</span></div>
+            <div class="spec"><span class="k">Year</span><span class="v">2018</span></div>
+            <div class="spec"><span class="k">Fuel</span><span class="v">Hybrid</span></div>
+            <div class="spec"><span class="k">Transmission</span><span class="v">Automatic</span></div>
+            <div class="spec"><span class="k">Color</span><span class="v">Pearl</span></div>
+          </div>
+          <h3 style="margin-top:14px">Description</h3>
+          <p>Reliable daily with hybrid efficiency. Smooth drive, accident-free. Finance can be arranged.</p>
+          
+          <!-- Similar Items Section -->
+          <div class="similar-lux">
+            <div class="sim-head">
+              <h3 class="sim-title">Similar ads</h3>
+              <div class="sim-nav">
+                <button class="sim-arrow" onclick="prevSlide()">‹</button>
+                <button class="sim-arrow" onclick="nextSlide()">›</button>
+              </div>
+            </div>
+            <div class="sim-viewport">
+              <div class="sim-track" id="similarTrack">
+                <div class="sim-slide">
+                  <a href="feat-7.html" class="sim-card">
+                    <img src="Img/veh1.jpg" alt="Toyota Aqua 2018" class="thumb" />
+                    <div class="info">
+                      <div class="title">Toyota Aqua 2018</div>
+                      <div class="sub">150,000 km</div>
+                      <div class="sub">Colombo, Cars</div>
+                      <div class="price">Rs 4,750,000</div>
+                      <div class="age">28 days</div>
+                    </div>
+                  </a>
+                  <a href="feat-8.html" class="sim-card">
+                    <img src="Img/veh1.jpg" alt="Toyota Aqua 2018" class="thumb" />
+                    <div class="info">
+                      <div class="title">Toyota Aqua 2018</div>
+                      <div class="sub">205,000 km</div>
+                      <div class="sub">Colombo, Cars</div>
+                      <div class="price">Rs 4,750,000</div>
+                      <div class="age">25 days</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="sim-slide">
+                  <a href="feat-9.html" class="sim-card">
+                    <img src="Img/veh1.jpg" alt="Toyota Aqua 2018" class="thumb" />
+                    <div class="info">
+                      <div class="title">Toyota Aqua 2018</div>
+                      <div class="sub">170,000 km</div>
+                      <div class="sub">Colombo, Cars</div>
+                      <div class="price">Rs 4,750,000</div>
+                      <div class="age">17 days</div>
+                    </div>
+                  </a>
+                  <a href="feat-10.html" class="sim-card">
+                    <img src="Img/veh1.jpg" alt="Toyota Aqua 2018" class="thumb" />
+                    <div class="info">
+                      <div class="title">Toyota Aqua 2018</div>
+                      <div class="sub">146,000 km</div>
+                      <div class="sub">Colombo, Cars</div>
+                      <div class="price">Rs 4,750,000</div>
+                      <div class="age">40 days</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sim-dots">
+              <button class="dot active" onclick="goToSlide(0)"></button>
+              <button class="dot" onclick="goToSlide(1)"></button>
+            </div>
+          </div>
+        </section>
+        <aside class="glass" style="padding:16px">
+          <div style="display:flex; align-items:center; gap:12px">
+            <div style="width:56px; height:56px; border-radius:14px; background:rgba(0,0,0,0.06)"></div>
+            <div>
+              <div style="font-weight:600">Ruwan Perera</div>
+              <div class="badge">✔ Verified</div>
+            </div>
+          </div>
+          <div style="margin-top:12px; font-size: 22px; font-weight:700" id="item-price">Rs. 4,750,000</div>
+          <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap">
+            <a class="btn btn-primary btn-sm" id="buyNow"><span class="icon">🛒</span>Buy Now</a>
+            <button class="btn btn-outline btn-sm" id="addToCart"><span class="icon">❤️</span>Save</button>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px">
+            <a class="btn btn-ghost btn-sm" href="chat.html"><span class="icon">💬</span>Chat with seller</a>
+            <a class="btn btn-ghost btn-sm" href="tel:+94770000000"><span class="icon">📞</span>Call seller</a>
+          </div>
+          <div id="similar-host"></div>
+        </aside>
+      </div>
+    </main>
+    <div id="footer" data-include="footer.html"></div>
+    
+    
+  </body>
+</html>
+
+

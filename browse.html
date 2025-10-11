@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Browse – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/browse.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/browse.js"></script>
+  </head>
+  <body>
+    <div id="header" data-include="header.html"></div>
+
+    <main class="container" style="display:grid; grid-template-columns: 280px 1fr; gap: 20px; margin-top:20px">
+      <aside class="glass sidebar" style="padding:16px">
+        <h3 style="margin-top:0">Filters</h3>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="urgent" style="width:100%; justify-content:space-between">Urgent <span>▾</span></button>
+          <div id="urgent" class="filter-body">
+            <label style="display:flex; align-items:center; gap:8px; margin-top:6px"><input type="checkbox" /> Urgent only</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="poster" style="width:100%; justify-content:space-between">Type of poster <span>▾</span></button>
+          <div id="poster" class="filter-body">
+            <label style="display:flex; align-items:center; gap:8px; margin-top:6px"><input type="radio" name="poster" /> All</label>
+            <label style="display:flex; align-items:center; gap:8px; margin-top:6px"><input type="radio" name="poster" /> Member</label>
+            <label style="display:flex; align-items:center; gap:8px; margin-top:6px"><input type="radio" name="poster" /> Verified seller</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="price" style="width:100%; justify-content:space-between">Price range <span>▾</span></button>
+          <div id="price" class="filter-body">
+            <div style="display:flex; gap:8px; align-items:center">
+              <input id="minPrice" class="input" type="number" placeholder="Min" />
+              <input id="maxPrice" class="input" type="number" placeholder="Max" />
+            </div>
+            <div class="muted" id="priceDisplay" style="margin-top:6px">Any price</div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="keywordWrap" style="width:100%; justify-content:space-between">Keyword <span>▾</span></button>
+          <div id="keywordWrap" class="filter-body">
+            <input id="keyword" class="input" placeholder="Search titles..." />
+            <div class="muted" style="margin-top:6px">Matches words in ad titles</div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="condition" style="width:100%; justify-content:space-between">Condition <span>▾</span></button>
+          <div id="condition" class="filter-body">
+            <label style="display:flex; align-items:center; gap:8px; margin-top:6px"><input type="checkbox" /> Brand New</label>
+            <label style="display:flex; align-items:center; gap:8px; margin-top:6px"><input type="checkbox" /> Used</label>
+            <label style="display:flex; align-items:center; gap:8px; margin-top:6px"><input type="checkbox" /> Reconditioned</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="location" style="width:100%; justify-content:space-between">Location <span>▾</span></button>
+          <div id="location" class="filter-body">
+            <input id="locationSearch" class="input" placeholder="Search location" />
+            <div style="display:grid; gap:6px; margin-top:6px">
+              <label><input type="checkbox" /> Colombo</label>
+              <label><input type="checkbox" /> Gampaha</label>
+              <label><input type="checkbox" /> Kandy</label>
+              <label><input type="checkbox" /> Galle</label>
+            </div>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="seller" style="width:100%; justify-content:space-between">Seller type <span>▾</span></button>
+          <div id="seller" class="filter-body">
+            <label><input type="checkbox" /> Individual</label>
+            <label><input type="checkbox" /> Dealer</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="btn btn-ghost" data-collapse="category" style="width:100%; justify-content:space-between">All Categories <span>▾</span></button>
+          <div id="category" class="filter-body" style="max-height:220px; overflow:auto">
+            <div class="muted" style="margin:6px 0">Vehicles</div>
+            <label><input type="checkbox" /> Cars</label>
+            <label><input type="checkbox" /> Motorbikes</label>
+            <label><input type="checkbox" /> Auto Parts & Accessories</label>
+            <label><input type="checkbox" /> Bicycles</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:12px; width:100%">Apply</button>
+      </aside>
+
+      <section>
+        <div style="display:flex; justify-content: space-between; align-items:center; margin-bottom:10px">
+          <div class="breadcrumbs">Home / Browse</div>
+          <div>
+            <label class="sr-only" for="sort">Sort by</label>
+            <select id="sort" class="select">
+              <option>Newest</option>
+              <option>Lowest Price</option>
+              <option>Highest Price</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-4" id="browse-grid">
+          <article class="listing-card fade-in" data-id="b-1" data-title="Toyota Vitz" data-price="3150000" data-location="Colombo" data-condition="Used" data-seller="Individual" data-category="Cars" data-poster="Member" data-img="Img/veh1.jpg">
+            <button class="fav-btn" data-fav-id="b-1">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/veh1.jpg" alt="Toyota Vitz" /></a>
+            <div class="content">
+              <div class="title">Toyota Vitz</div>
+              <div class="meta"><span>Rs. 3,150,000</span><span>Colombo</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"1.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="b-2" data-title="Honda Dio" data-price="245000" data-location="Gampaha" data-condition="Used" data-seller="Dealer" data-category="Motorbikes" data-poster="Verified seller" data-img="https://picsum.photos/seed/dio/600/400" data-urgent>
+            <button class="fav-btn" data-fav-id="b-2">❤</button>
+            <a href="item.html"2.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/dio/600/400" alt="Honda Dio" /></a>
+            <div class="content">
+              <div class="title">Honda Dio</div>
+              <div class="meta"><span>Rs. 245,000</span><span>Gampaha</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"2.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="b-3" data-title="Mountain Bike" data-price="95000" data-location="Kandy" data-condition="Brand New" data-seller="Individual" data-category="Bicycles" data-poster="All" data-img="https://picsum.photos/seed/bike-b/600/400">
+            <button class="fav-btn" data-fav-id="b-3">❤</button>
+            <a href="item.html"3.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/bike-b/600/400" alt="Mountain Bike" /></a>
+            <div class="content">
+              <div class="title">Mountain Bike</div>
+              <div class="meta"><span>Rs. 95,000</span><span>Kandy</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"3.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="b-4" data-title="Alloy Wheels Set" data-price="120000" data-location="Galle" data-condition="Reconditioned" data-seller="Dealer" data-category="Auto Parts & Accessories" data-poster="Member" data-img="https://picsum.photos/seed/wheels/600/400">
+            <button class="fav-btn" data-fav-id="b-4">❤</button>
+            <a href="item.html"4.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/wheels/600/400" alt="Alloy Wheels Set" /></a>
+            <div class="content">
+              <div class="title">Alloy Wheels Set</div>
+              <div class="meta"><span>Rs. 120,000</span><span>Galle</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"4.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="b-5" data-title="Apple Watch Series 7" data-price="125000" data-location="Colombo" data-condition="Brand New" data-seller="Dealer" data-category="Accessories" data-poster="Member" data-img="https://picsum.photos/seed/watch/600/400">
+            <button class="fav-btn" data-fav-id="b-5">❤</button>
+            <a href="item.html"5.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/watch/600/400" alt="Apple Watch Series 7" /></a>
+            <div class="content">
+              <div class="title">Apple Watch Series 7</div>
+              <div class="meta"><span>Rs. 125,000</span><span>Colombo</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"5.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="b-6" data-title="Sofa 3 Seater" data-price="155000" data-location="Gampaha" data-condition="Used" data-seller="Individual" data-category="Home & Garden" data-poster="Member" data-img="https://picsum.photos/seed/sofa/600/400">
+            <button class="fav-btn" data-fav-id="b-6">❤</button>
+            <a href="item.html"6.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/sofa/600/400" alt="Sofa 3 Seater" /></a>
+            <div class="content">
+              <div class="title">Sofa 3 Seater</div>
+              <div class="meta"><span>Rs. 155,000</span><span>Gampaha</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"6.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="b-7" data-title="Asus Gaming PC" data-price="385000" data-location="Kandy" data-condition="Reconditioned" data-seller="Dealer" data-category="Electronics" data-poster="Verified seller" data-img="https://picsum.photos/seed/pc/600/400">
+            <button class="fav-btn" data-fav-id="b-7">❤</button>
+            <a href="item.html"7.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/pc/600/400" alt="Asus Gaming PC" /></a>
+            <div class="content">
+              <div class="title">Asus Gaming PC</div>
+              <div class="meta"><span>Rs. 385,000</span><span>Kandy</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"7.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="b-8" data-title="Single Door Fridge" data-price="82000" data-location="Galle" data-condition="Brand New" data-seller="Dealer" data-category="Home Appliances" data-poster="Member" data-img="https://picsum.photos/seed/fridge/600/400">
+            <button class="fav-btn" data-fav-id="b-8">❤</button>
+            <a href="item.html"8.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/fridge/600/400" alt="Single Door Fridge" /></a>
+            <div class="content">
+              <div class="title">Single Door Fridge</div>
+              <div class="meta"><span>Rs. 82,000</span><span>Galle</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"8.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing-card fade-in" data-id="b-1" data-title="Toyota Vitz" data-price="3150000" data-location="Colombo" data-condition="Used" data-category="Cars" data-img="https://picsum.photos/seed/vitz/600/400">
+            <button class="fav-btn" data-fav-id="b-1">❤</button>
+            <a href="item.html"1.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/vitz/600/400" alt="Toyota Vitz" /></a>
+            <div class="content">
+              <div class="title">Toyota Vitz</div>
+              <div class="meta"><span>Rs. 3,150,000</span><span>Colombo</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"1.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing-card fade-in" data-id="b-2" data-title="Honda Dio" data-price="245000" data-location="Gampaha" data-condition="Used" data-category="Motorbikes" data-img="https://picsum.photos/seed/dio/600/400">
+            <button class="fav-btn" data-fav-id="b-2">❤</button>
+            <a href="item.html"2.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/dio/600/400" alt="Honda Dio" /></a>
+            <div class="content">
+              <div class="title">Honda Dio</div>
+              <div class="meta"><span>Rs. 245,000</span><span>Gampaha</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"2.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="listing-card fade-in" data-id="b-3" data-title="Samsung Galaxy S23 Ultra" data-price="485000" data-location="Colombo" data-condition="Brand New" data-category="Mobiles" data-img="https://picsum.photos/seed/s23/600/400">
+            <button class="fav-btn" data-fav-id="b-3">❤</button>
+            <a href="item.html"3.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/s23/600/400" alt="Samsung Galaxy S23 Ultra" /></a>
+            <div class="content">
+              <div class="title">Samsung Galaxy S23 Ultra</div>
+              <div class="meta"><span>Rs. 485,000</span><span>Colombo</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html"3.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+
+        <article class="listing-card fade-in" data-id="b-1" data-title="Toyota Vitz" data-price="3150000" data-location="Colombo" data-condition="Used" data-category="Cars" data-img="https://picsum.photos/seed/vitz/600/400">
+          <button class="fav-btn" data-fav-id="b-1">❤</button>
+          <a href="item.html"1.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/vitz/600/400" alt="Toyota Vitz" /></a>
+          <div class="content">
+            <div class="title">Toyota Vitz</div>
+            <div class="meta"><span>Rs. 3,150,000</span><span>Colombo</span></div>
+            <div class="actions"><a class="btn btn-ghost" href="item.html"1.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div>
+          </div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-2" data-title="Honda Dio" data-price="245000" data-location="Gampaha" data-condition="Used" data-category="Motorbikes" data-img="https://picsum.photos/seed/dio/600/400">
+          <button class="fav-btn" data-fav-id="b-2">❤</button>
+          <a href="item.html"2.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/dio/600/400" alt="Honda Dio" /></a>
+          <div class="content"><div class="title">Honda Dio</div><div class="meta"><span>Rs. 245,000</span><span>Gampaha</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"2.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-3" data-title="Nissan Leaf" data-price="5950000" data-location="Kandy" data-condition="Reconditioned" data-category="Cars" data-img="https://picsum.photos/seed/leaf/600/400">
+          <button class="fav-btn" data-fav-id="b-3">❤</button>
+          <a href="item.html"3.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/leaf/600/400" alt="Nissan Leaf" /></a>
+          <div class="content"><div class="title">Nissan Leaf</div><div class="meta"><span>Rs. 5,950,000</span><span>Kandy</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"3.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-4" data-title="Yamaha FZ-S V3" data-price="610000" data-location="Galle" data-condition="Used" data-category="Motorbikes" data-img="https://picsum.photos/seed/fzs/600/400">
+          <button class="fav-btn" data-fav-id="b-4">❤</button>
+          <a href="item.html"4.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/fzs/600/400" alt="Yamaha FZ-S V3" /></a>
+          <div class="content"><div class="title">Yamaha FZ-S V3</div><div class="meta"><span>Rs. 610,000</span><span>Galle</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"4.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-5" data-title="Suzuki Alto" data-price="3450000" data-location="Negombo" data-condition="Used" data-category="Cars" data-img="https://picsum.photos/seed/alto/600/400">
+          <button class="fav-btn" data-fav-id="b-5">❤</button>
+          <a href="item.html"5.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/alto/600/400" alt="Suzuki Alto" /></a>
+          <div class="content"><div class="title">Suzuki Alto</div><div class="meta"><span>Rs. 3,450,000</span><span>Negombo</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"5.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-6" data-title="iPhone 15 Pro Max" data-price="615000" data-location="Colombo" data-condition="Brand New" data-category="Mobiles" data-img="https://picsum.photos/seed/iphone15/600/400">
+          <button class="fav-btn" data-fav-id="b-6">❤</button>
+          <a href="item.html"6.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/iphone15/600/400" alt="iPhone 15 Pro Max" /></a>
+          <div class="content"><div class="title">iPhone 15 Pro Max</div><div class="meta"><span>Rs. 615,000</span><span>Colombo</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"6.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-7" data-title="Samsung Galaxy S23 Ultra" data-price="485000" data-location="Colombo" data-condition="Brand New" data-category="Mobiles" data-img="https://picsum.photos/seed/s23/600/400">
+          <button class="fav-btn" data-fav-id="b-7">❤</button>
+          <a href="item.html"7.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/s23/600/400" alt="Samsung Galaxy S23 Ultra" /></a>
+          <div class="content"><div class="title">Samsung Galaxy S23 Ultra</div><div class="meta"><span>Rs. 485,000</span><span>Colombo</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"7.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-8" data-title="Xiaomi 14T Pro" data-price="215000" data-location="Kandy" data-condition="Brand New" data-category="Mobiles" data-img="https://picsum.photos/seed/xiaomi/600/400">
+          <button class="fav-btn" data-fav-id="b-8">❤</button>
+          <a href="item.html"8.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/xiaomi/600/400" alt="Xiaomi 14T Pro" /></a>
+          <div class="content"><div class="title">Xiaomi 14T Pro</div><div class="meta"><span>Rs. 215,000</span><span>Kandy</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"8.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+
+        <article class="listing-card fade-in" data-id="b-9" data-title="Men's Casual Jacket" data-price="14500" data-location="Colombo" data-condition="Brand New" data-category="Fashion" data-img="https://picsum.photos/seed/jacket/600/400">
+          <button class="fav-btn" data-fav-id="b-9">❤</button>
+          <a href="item.html"9.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/jacket/600/400" alt="Men's Casual Jacket" /></a>
+          <div class="content"><div class="title">Men's Casual Jacket</div><div class="meta"><span>Rs. 14,500</span><span>Colombo</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"9.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-10" data-title="Ladies Handbag" data-price="8900" data-location="Gampaha" data-condition="Brand New" data-category="Fashion" data-img="https://picsum.photos/seed/handbag/600/400">
+          <button class="fav-btn" data-fav-id="b-10">❤</button>
+          <a href="item.html"10.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/handbag/600/400" alt="Ladies Handbag" /></a>
+          <div class="content"><div class="title">Ladies Handbag</div><div class="meta"><span>Rs. 8,900</span><span>Gampaha</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"10.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+
+        <article class="listing-card fade-in" data-id="b-11" data-title="IELTS Classes" data-price="25000" data-location="Colombo" data-condition="Service" data-category="Education" data-img="https://picsum.photos/seed/ielts/600/400">
+          <button class="fav-btn" data-fav-id="b-11">❤</button>
+          <a href="item.html"11.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/ielts/600/400" alt="IELTS Classes" /></a>
+          <div class="content"><div class="title">IELTS Classes</div><div class="meta"><span>Rs. 25,000</span><span>Colombo</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"11.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-1" data-title="Toyota Vitz" data-price="3150000" data-location="Colombo" data-condition="Used" data-category="Cars" data-img="https://picsum.photos/seed/vitz/600/400">
+          <button class="fav-btn" data-fav-id="b-1">❤</button>
+          <a href="item.html"1.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/vitz/600/400" alt="Toyota Vitz" /></a>
+          <div class="content">
+            <div class="title">Toyota Vitz</div>
+            <div class="meta"><span>Rs. 3,150,000</span><span>Colombo</span></div>
+            <div class="actions"><a class="btn btn-ghost" href="item.html"1.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div>
+          </div>
+        </article>
+
+        <article class="listing-card fade-in" data-id="b-2" data-title="Honda Dio" data-price="245000" data-location="Gampaha" data-condition="Used" data-category="Motorbikes" data-img="https://picsum.photos/seed/dio/600/400">
+          <button class="fav-btn" data-fav-id="b-2">❤</button>
+          <a href="item.html"2.html"><img loading="lazy" class="thumb" src="https://picsum.photos/seed/dio/600/400" alt="Honda Dio" /></a>
+          <div class="content"><div class="title">Honda Dio</div><div class="meta"><span>Rs. 245,000</span><span>Gampaha</span></div><div class="actions"><a class="btn btn-ghost" href="item.html"2.html">See Details</a><button class="btn btn-primary" data-add-cart>Add to Cart</button></div></div>
+        </article>
+
+
+  
+        </div>
+        <div id="pagination" class="pagination luxury"></div>
+      </section>
+    </main>
+
+    <div id="footer" data-include="footer.html"></div>
+  </body>
+  
+</html>
+
+

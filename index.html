@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ikman.lk – Modern Redesign</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/index.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header" data-include="header.html"></div>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="surface">
+            <h1 class="fade-in">Buy & Sell Anything in Sri Lanka</h1>
+            <p class="muted fade-in" style="animation-delay:80ms">Discover thousands of local listings. Safe, fast, and easy.</p>
+            <div class="search-xl fade-in" style="animation-delay:120ms">
+              <input type="text" placeholder="What are you looking for?" aria-label="Search" />
+              <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories" aria-labelledby="browse-by-category">
+        <div class="container">
+          <h2 id="browse-by-category" style="margin:0 0 12px 0">Browse items by category</h2>
+          <div class="items">
+            <a class="item" href="cat-vehicles.html">🚗 <span>Vehicles</span></a>
+            <a class="item" href="cat-mobiles.html">📱 <span>Mobiles</span></a>
+            <a class="item" href="cat-property.html">🏡 <span>Property</span></a>
+            <a class="item" href="cat-electronics.html">🔌 <span>Electronics</span></a>
+            <a class="item" href="cat-home.html">🛋️ <span>Home & Garden</span></a>
+            <a class="item" href="cat-services.html">🛠️ <span>Services</span></a>
+            <a class="item" href="cat-business.html">🏭 <span>Business & Industry</span></a>
+            <a class="item" href="cat-jobs.html">💼 <span>Jobs</span></a>
+            <a class="item" href="cat-hobby.html">⚽ <span>Hobby, Sport & Kids</span></a>
+            <a class="item" href="cat-animals.html">🐾 <span>Animals</span></a>
+            <a class="item" href="cat-fashion.html">⌚ <span>Fashion & Beauty</span></a>
+            <a class="item" href="cat-education.html">🎓 <span>Education</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container" aria-labelledby="featured-title">
+        <h2 id="featured-title">Featured Listings</h2>
+        <div class="grid grid-4" id="featured-grid">
+          <article class="listing-card fade-in" data-id="feat-1" data-title="Toyota Aqua 2018" data-price="4750000" data-img="Img/veh1.jpg">
+            <button class="fav-btn" data-fav-id="feat-1" title="Save">❤</button>
+            <a href="feat-1.html"><img loading="lazy" class="thumb" src="Img/Audi Q7.jpg" alt="Toyota Aqua 2018" /></a>
+            <div class="content">
+              <div class="title">Audi Q7 ALL NEW 2025</div>
+              <div class="meta"><span>Rs 74,500,000</span><span>Kohuwala, Colombo</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-1.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="feat-2" data-title="iPhone 13 Pro" data-price="325000" data-img="Img/i5 4th Gen Desktop Full set Pc.jpg">
+            <button class="fav-btn" data-fav-id="feat-2" title="Save">❤</button>
+            <a href="feat-2.html"><img loading="lazy" class="thumb" src="Img/i5 4th Gen Desktop Full set Pc.jpg" alt="iPhone 13 Pro" /></a>
+            <div class="content">
+              <div class="title">i5 4th Gen Desktop Full set Pc</div>
+              <div class="meta"><span>Rs 50,000</span><span>Anuradhapura</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-2.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="feat-3" data-title="3BR Apartment" data-price="45000000" data-img="Img/Shop for Rent.jpg">
+            <button class="fav-btn" data-fav-id="feat-3" title="Save">❤</button>
+            <a href="feat-3.html"><img loading="lazy" class="thumb" src="Img/Shop for Rent.jpg" alt="3BR Apartment" /></a>
+            <div class="content">
+              <div class="title">Shop for Rent </div>
+              <div class="meta"><span>Rs 22,000 /month</span><span>Colombo</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-3.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="feat-4" data-title="Yamaha FZ 2019" data-price="675000" data-img="Img/Diesel Timeframe Daddy Watch.jpg">
+            <button class="fav-btn" data-fav-id="feat-4" title="Save">❤</button>
+            <a href="feat-4.html"><img loading="lazy" class="thumb" src="Img/Diesel Timeframe Daddy Watch.jpg" alt="Yamaha FZ 2019" /></a>
+            <div class="content">
+              <div class="title">Diesel / Daddy Watch</div>
+              <div class="meta"><span>Rs 79,900</span><span>Matara</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-4.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="feat-5" data-title="Samsung Galaxy S22" data-price="285000" data-img="Img/Honor X9c (Used).jpg">
+            <button class="fav-btn" data-fav-id="feat-5" title="Save">❤</button>
+            <a href="feat-5.html"><img loading="lazy" class="thumb" src="Img/Honor X9c (Used).jpg" alt="Samsung Galaxy S22" /></a>
+            <div class="content">
+              <div class="title">Honor X9c (Used)</div>
+              <div class="meta"><span>Rs 67,500</span><span>Gampaha</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-5.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="feat-6" data-title="Dell XPS 13" data-price="495000" data-img="Img/PS4 Pro 1TB Full Set.jpg">
+            <button class="fav-btn" data-fav-id="feat-6" title="Save">❤</button>
+            <a href="feat-6.html"><img loading="lazy" class="thumb" src="Img/PS4 Pro 1TB Full Set.jpg" alt="Dell XPS 13" /></a>
+            <div class="content">
+              <div class="title">PS4 Pro 1TB Full Set</div>
+              <div class="meta"><span>Rs 68,000</span><span>Kandy</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-6.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="feat-7" data-title="LG 55 4K TV" data-price="375000" data-img="Img/Cocker Spaniel Puppies.jpg">
+            <button class="fav-btn" data-fav-id="feat-7" title="Save">❤</button>
+            <a href="feat-7.html"><img loading="lazy" class="thumb" src="Img/Cocker Spaniel Puppies.jpg" alt="LG 55 4K TV" /></a>
+            <div class="content">
+              <div class="title">Cocker Spaniel Puppies</div>
+              <div class="meta"><span>Rs 30,000</span><span>Galle</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-7.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="feat-8" data-title="Office Desk" data-price="68000" data-img="https://picsum.photos/seed/desk/600/400">
+            <button class="fav-btn" data-fav-id="feat-8" title="Save">❤</button>
+            <a href="feat-8.html"><img loading="lazy" class="thumb" src="Img/Solar System.jpg" alt="Office Desk" /></a>
+            <div class="content">
+              <div class="title">Solar System</div>
+              <div class="meta"><span>Rs 130,000</span><span>Matara</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="feat-8.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container" aria-labelledby="recommend-title" style="margin-top:24px">
+        <h2 id="recommend-title">Recommended for you</h2>
+        <div class="grid grid-4" id="recommend-grid">
+          <article class="listing-card fade-in" data-id="rec-1" data-title="HP Laptop 15" data-price="185000" data-img="https://picsum.photos/seed/laptop/600/400">
+            <button class="fav-btn" data-fav-id="rec-1" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/Honda Fit 2016.jpg" alt="HP Laptop 15" /></a>
+            <div class="content">
+              <div class="title">Honda Fit 2016</div>
+              <div class="meta"><span>Rs 7,950,000</span><span>Ampara</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="rec-2" data-title="Office Chair" data-price="28000" data-img="https://picsum.photos/seed/chair/600/400">
+            <button class="fav-btn" data-fav-id="rec-2" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/Totota Premio 2019.jpg" alt="Office Chair" /></a>
+            <div class="content">
+              <div class="title">Totota Premio 2019 </div>
+              <div class="meta"><span>Rs 1,128,000</span><span>Gampaha</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="rec-3" data-title="Canon EOS M50" data-price="245000" data-img="https://picsum.photos/seed/camera/600/400">
+            <button class="fav-btn" data-fav-id="rec-3" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/OTHM Assignment Assistance.jpg" alt="Canon EOS M50" /></a>
+            <div class="content">
+              <div class="title">OTHM Assignment Assistance</div>
+              <div class="meta"><span>Rs. 4,000</span><span>Kandy</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="rec-4" data-title="Mountain Bike" data-price="95000" data-img="https://picsum.photos/seed/mtb/600/400">
+            <button class="fav-btn" data-fav-id="rec-4" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/Tv Stand.jpg" alt="Mountain Bike" /></a>
+            <div class="content">
+              <div class="title">Tv Stand</div>
+              <div class="meta"><span>Rs 30,000</span><span>Kurunegala</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="rec-5" data-title="Dining Table Set" data-price="125000" data-img="https://picsum.photos/seed/dining/600/400">
+            <button class="fav-btn" data-fav-id="rec-5" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/New Sofa Set 3.2.1 brand cusion.jpg" alt="Dining Table Set" /></a>
+            <div class="content">
+              <div class="title">New Sofa Set 3.2.1 brand cusion</div>
+              <div class="meta"><span>Rs. 125,000</span><span>Colombo</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="rec-6" data-title="Washing Machine" data-price="98000" data-img="https://picsum.photos/seed/wash/600/400">
+            <button class="fav-btn" data-fav-id="rec-6" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/Pastry Bite Shop Equipments.jpg" alt="Washing Machine" /></a>
+            <div class="content">
+              <div class="title">Pastry/Bite Shop Equipments</div>
+              <div class="meta"><span>Rs. 98,000</span><span>Gampaha</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="rec-7" data-title="Air Conditioner" data-price="145000" data-img="https://picsum.photos/seed/ac/600/400">
+            <button class="fav-btn" data-fav-id="rec-7" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/SEMI ACOUSTIC GUITAR.jpg" alt="Air Conditioner" /></a>
+            <div class="content">
+              <div class="title">SEMI ACOUSTIC GUITAR</div>
+              <div class="meta"><span>Rs. 25,000</span><span>Kandy</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="listing-card fade-in" data-id="rec-8" data-title="Gaming Console" data-price="195000" data-img="https://picsum.photos/seed/console/600/400">
+            <button class="fav-btn" data-fav-id="rec-8" title="Save">❤</button>
+            <a href="item.html"><img loading="lazy" class="thumb" src="Img/English Piano.jpg" alt="Gaming Console" /></a>
+            <div class="content">
+              <div class="title">English Piano</div>
+              <div class="meta"><span>Rs. 300,000</span><span>Kurunegala</span></div>
+              <div class="actions">
+                <a class="btn btn-ghost" href="item.html">See Details</a>
+                <button class="btn btn-primary" data-add-cart>Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer" data-include="footer.html"></div>
+  </body>
+</html>
+
+

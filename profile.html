@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/profile.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/profile.js"></script>
+  </head>
+  <body>
+    <div id="header" data-include="header.html"></div>
+    <main class="container" style="margin-top:20px">
+      <section class="profile-hero">
+        <div class="profile-left">
+          <div class="avatar"><img src="Img/me1.png" alt="Avatar" style="width:100%;height:100%;object-fit:cover"></div>
+          <div>
+            <div class="name-row">
+              <h2 style="margin:0">Tharindu Thilakshana</h2>
+              <div class="verified">✔ Verified</div>
+              <span class="badge-pro">PRO</span>
+            </div>
+            <div class="muted">Joined 2022 · Colombo · Response rate 98%</div>
+            <div class="stat-chips" style="margin-top:8px">
+              <div class="chip-lg">Active ads: <strong id="ad-count">0</strong></div>
+              <div class="chip-lg">Favorites: <strong id="fav-count">0</strong></div>
+              <div class="chip-lg">Rating: <span class="stars">★★★★★</span> (124)</div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <a class="btn btn-ghost" href="edit-profile.html">Edit Profile</a>
+          <a class="btn btn-outline" href="profile-settings.html">Settings</a>
+          <button class="btn btn-accent" onclick="location.href='post.html'">Post Ad</button>
+          <button class="btn btn-ghost" onclick="alert('Logged out (mock)'); location.href='auth.html'">Logout</button>
+        </div>
+      </section>
+
+      <div class="profile-tabs">
+        <div class="tab active">Active Ads</div>
+        <div class="tab">Reviews</div>
+        <div class="tab">About</div>
+        <div class="tab">Badges</div>
+      </div>
+
+      <section class="two-col" style="margin-top:12px">
+        <div class="panel">
+          <h3 style="margin:0 0 10px">Your Active Ads</h3>
+          <div class="grid grid-4" id="ads"></div>
+        </div>
+        <aside class="panel" style="display:grid; gap:12px">
+          <div>
+            <h3 style="margin:0 0 8px">Seller Information</h3>
+            <div class="info-list">
+              <div class="info-row"><span>Member since</span><strong>Jan 2022</strong></div>
+              <div class="info-row"><span>Verification</span><strong>Phone, Email</strong></div>
+              <div class="info-row"><span>Typical reply time</span><strong>Within 1 hour</strong></div>
+              <div class="info-row"><span>Languages</span><strong>English, Sinhala</strong></div>
+              <div class="info-row"><span>Seller level</span><strong>Pro Merchant</strong></div>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin:0 0 8px">Recent Reviews</h3>
+            <div class="reviews">
+              <div class="review">
+                <div class="avatar"></div>
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px"><strong>Isuru</strong><span class="stars">★★★★★</span><span class="muted">2 days ago</span></div>
+                  <div>Great seller — fast communication and item as described.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="avatar"></div>
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px"><strong>Nadeesha</strong><span class="stars">★★★★☆</span><span class="muted">1 week ago</span></div>
+                  <div>Smooth transaction. Would buy again.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="panel" style="margin-top:16px">
+        <h3 style="margin:0 0 10px">Quick Settings</h3>
+        <div class="settings-grid">
+          <div class="setting-card"><strong>Storefront</strong><div class="muted">Customize your public profile</div><div style="margin-top:8px"><a class="btn btn-outline btn-sm" href="edit-profile.html">Edit details</a></div></div>
+          <div class="setting-card"><strong>Notifications</strong><div class="muted">Manage alerts and messages</div><div style="margin-top:8px"><a class="btn btn-outline btn-sm" href="profile-settings.html#notifications">Open</a></div></div>
+          <div class="setting-card"><strong>Security</strong><div class="muted">Change password, 2FA</div><div style="margin-top:8px"><a class="btn btn-outline btn-sm" href="profile-settings.html#security">Manage</a></div></div>
+        </div>
+      </section>
+    </main>
+    <div id="footer" data-include="footer.html"></div>
+  </body>
+</html>
+
+

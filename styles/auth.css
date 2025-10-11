@@ -1,0 +1,11 @@
+/* Auth page */
+.auth-card { backdrop-filter: var(--backdrop); }
+
+.tabs { display:flex; gap:6px; background: rgba(0,0,0,0.04); padding:6px; border-radius:12px; border:1px solid rgba(0,0,0,0.06); }
+html.dark .tabs { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); }
+.tab { padding:10px 14px; border-radius:10px; border:1px solid transparent; }
+.tab.active { background: rgba(0,168,89,0.12); color: var(--color-primary); }
+
+.panel { display:grid; gap:8px; margin-top:12px; }
+
+

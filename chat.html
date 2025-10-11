@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/chat.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/chat.js"></script>
+  </head>
+  <body>
+    <div id="header" data-include="header.html"></div>
+    <main class="container" style="margin-top:16px">
+      <section class="chat chat-pro">
+        <aside class="sidebar pro-glass">
+          <div class="head">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+              <h3 style="margin:0">Messages</h3>
+              <div class="toolbar">
+                <button class="icon" type="button" id="newChatBtn" title="New chat">➕</button>
+                <a href="browse.html" class="icon" title="Browse ads">🛒</a>
+                <a href="profile-settings.html" class="icon" title="Profile">⚙️</a>
+              </div>
+            </div>
+            <div class="search-wrap pro-input">
+              <span aria-hidden="true">🔎</span>
+              <input id="searchThreads" class="input search" placeholder="Search conversations, users…" />
+              <button class="icon" type="button" id="clearSearch" title="Clear">✖</button>
+            </div>
+            <div class="quick-filters">
+              <button class="chip" data-filter="all">All</button>
+              <button class="chip" data-filter="unread">Unread</button>
+              <button class="chip" data-filter="starred">Starred</button>
+              <button class="chip" data-filter="archived">Archived</button>
+            </div>
+          </div>
+          <div id="threads" class="threads"></div>
+        </aside>
+        <section class="messages pro-surface">
+          <header class="conv-header" id="convHeader">
+            <div style="display:flex; align-items:center; gap:10px">
+              <button class="icon only-mobile" type="button" id="menuBtn" aria-label="Open sidebar">☰</button>
+              <div class="avatar ring" id="convAvatar">👤</div>
+              <div style="display:grid">
+                <strong id="convName">Chat</strong>
+                <span class="muted" id="convStatus">Online</span>
+              </div>
+            </div>
+            <div class="conv-actions">
+              <button class="icon" type="button" id="voiceCallBtn" title="Voice call">📞</button>
+              <button class="icon" type="button" id="videoCallBtn" title="Video call">🎥</button>
+              <button class="icon" type="button" id="pinBtn" title="Pin chat">📌</button>
+              <button class="icon" type="button" id="infoBtn" title="Chat info">ℹ️</button>
+            </div>
+          </header>
+          <div class="day-divider" aria-hidden="true"><span>Today</span></div>
+          <div class="list" id="msgs"></div>
+          <div id="emptyState" class="empty hidden">
+            <div class="empty-art">💬</div>
+            <div><strong>Select a conversation</strong></div>
+            <div class="muted">Your messages will appear here</div>
+          </div>
+          <div id="typing" class="typing hidden"><span></span><span></span><span></span></div>
+          <form id="composer" class="composer pro-composer">
+            <button class="icon" type="button" id="emojiBtn" title="Insert emoji">😊</button>
+            <button class="icon" type="button" id="gifBtn" title="Insert GIF">🖼️</button>
+            <button class="icon" type="button" id="attachBtn" title="Attach file">📎</button>
+            <div class="composer-input-wrap">
+              <textarea class="input" id="m" placeholder="Write a message…" rows="1"></textarea>
+              <div class="composer-tools">
+                <button class="chip sm" type="button" id="quickTemplate" title="Templates">Template</button>
+                <button class="chip sm" type="button" id="scheduleMsg" title="Schedule">Schedule</button>
+              </div>
+            </div>
+            <button class="icon" type="button" id="voiceBtn" title="Record voice">🎙️</button>
+            <button class="btn btn-primary" id="sendBtn" aria-label="Send">Send</button>
+          </form>
+        </section>
+        <aside class="details pro-glass" id="detailsPane" aria-label="Chat details" hidden>
+          <div class="details-header">
+            <strong>Details</strong>
+            <button class="icon" type="button" id="closeDetails" aria-label="Close">✖</button>
+          </div>
+          <div class="details-body">
+            <div class="card">
+              <div class="row">
+                <div class="avatar sm">👤</div>
+                <div style="display:grid">
+                  <strong id="dName">User</strong>
+                  <span class="muted" id="dMeta">Member since 2022</span>
+                </div>
+              </div>
+              <div class="row stats">
+                <div><strong id="dRating">4.9</strong><span class="muted">Rating</span></div>
+                <div><strong id="dSales">128</strong><span class="muted">Sales</span></div>
+                <div><strong id="dResponse">~1h</strong><span class="muted">Response</span></div>
+              </div>
+            </div>
+            <div class="card">
+              <strong>Shared items</strong>
+              <div id="shared" class="shared-grid"></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <div id="footer" data-include="footer.html"></div>
+    <div class="overlay" id="overlay" hidden></div>
+    <style>
+      /* Layout */
+      .chat-pro { display:grid; grid-template-columns: 320px 1fr; gap:16px; align-items:stretch }
+      @media (max-width: 1000px) { .chat-pro { grid-template-columns: 1fr; } .details{display:none!important} .only-mobile{display:inline-flex} }
+      .only-mobile{ display:none }
+      .messages { display:grid; grid-template-rows: auto 1fr auto; min-height:60vh; border-radius:16px; overflow:hidden }
+      .pro-surface { background: linear-gradient(180deg, var(--bg-card), transparent); border:1px solid var(--border); border-radius:16px }
+      .sidebar { padding:12px }
+      .details { padding:12px; min-width:300px }
+      /* Mobile sidebar */
+      @media (max-width: 1000px){
+        .sidebar { position: fixed; inset: 0 auto 0 0; width: 86vw; max-width: 380px; z-index: 40; transform: translateX(-100%); transition: transform .25s ease }
+        .sidebar.open { transform: translateX(0) }
+        .overlay { position: fixed; inset:0; background: rgba(0,0,0,.32); backdrop-filter: blur(2px); z-index:39 }
+      }
+
+      /* Luxury glass + transitions */
+      .pro-glass { backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4)); border-radius:16px; border:1px solid rgba(255,255,255,0.5); transition: box-shadow .25s ease }
+      .pro-glass:hover { box-shadow: 0 8px 28px rgba(0,0,0,.08) }
+      [data-theme="dark"] .pro-glass { background: linear-gradient(180deg, rgba(17,24,39,0.6), rgba(17,24,39,0.4)); border-color: rgba(255,255,255,0.08) }
+
+      /* Threads */
+      .threads { display:grid; gap:8px; margin-top:10px; max-height:calc(100vh - 260px); overflow:auto; overscroll-behavior: contain }
+      .thread { display:grid; grid-template-columns: 36px 1fr auto; align-items:center; gap:10px; padding:10px; border-radius:12px; border:1px solid transparent; background: transparent; cursor:pointer; transition: background .2s ease, border-color .2s ease }
+      .thread:hover { background: var(--bg); border-color: var(--border) }
+      .thread.active { background: linear-gradient(180deg, rgba(16,185,129,.10), rgba(16,185,129,.04)); border-color: rgba(16,185,129,.35) }
+      .thread .unread { min-width:18px; height:18px; padding:0 6px; display:inline-flex; align-items:center; justify-content:center; border-radius:999px; background: var(--accent); color:#fff; font-size:11px; font-weight:700 }
+      .thread .t-top { display:flex; align-items:center; justify-content:space-between }
+      .thread .t-time { font-size:12px; color:var(--muted) }
+      .toolbar .icon { background:transparent; border:none; cursor:pointer; transition: transform .15s ease }
+      .toolbar .icon:hover { transform: translateY(-1px) }
+      .search-wrap { display:flex; gap:8px; align-items:center; padding:8px 10px; border:1px solid var(--border); border-radius:12px; background:var(--bg) }
+      .quick-filters { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap }
+      .chip { padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:var(--bg); cursor:pointer; transition: all .2s ease }
+      .chip:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,.06) }
+      .chip.sm { padding:4px 8px; font-size:12px }
+
+      /* Header */
+      .conv-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid var(--border); position:sticky; top:0; backdrop-filter: blur(6px); background:linear-gradient(180deg, var(--bg), rgba(0,0,0,0)) }
+      .avatar.ring { border:2px solid var(--accent); border-radius:999px; width:36px; height:36px; display:flex; align-items:center; justify-content:center; animation: ringGlow 2.5s ease-in-out infinite }
+      .conv-actions .icon { background:transparent; border:none; margin-left:6px; cursor:pointer; transition: transform .15s ease, opacity .2s ease }
+      .conv-actions .icon:hover { transform: translateY(-1px); opacity:.9 }
+
+      /* Messages list */
+      .day-divider { display:flex; justify-content:center; margin:10px 0 }
+      .day-divider span { padding:4px 10px; border:1px dashed var(--border); border-radius:999px; font-size:12px; color:var(--muted); background:var(--bg) }
+      .list { padding:14px; display:grid; gap:10px; overflow:auto; max-height:calc(100vh - 280px); scrollbar-width: thin }
+      .list::-webkit-scrollbar { width: 8px }
+      .list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px }
+      .empty { display:grid; place-items:center; gap:6px; padding:30px }
+      .hidden { display:none !important }
+
+      /* Message bubbles (hooks for your JS: .msg, .sent, .received) */
+      .msg { max-width: min(70%, 640px); padding:10px 12px; border-radius:14px; border:1px solid var(--border); background: var(--bg); box-shadow: 0 8px 18px rgba(0,0,0,.04); animation: fadeSlideUp .25s ease }
+      .msg .meta { display:flex; gap:8px; margin-top:6px; font-size:12px; color:var(--muted) }
+      .msg.sent { justify-self:end; background: linear-gradient(180deg, rgba(16,185,129,.12), rgba(16,185,129,.06)); border-color: rgba(16,185,129,.35) }
+      .msg.received { justify-self:start }
+
+      /* Composer */
+      .composer.pro-composer { display:flex; gap:8px; align-items:center; padding:10px; border-top:1px solid var(--border); background: var(--bg) }
+      .composer .icon { background:transparent; border:none; cursor:pointer; transition: transform .15s ease }
+      .composer .icon:hover { transform: translateY(-1px) }
+      .composer-input-wrap { flex:1; display:grid; gap:6px }
+      .composer-tools { display:flex; gap:6px; flex-wrap:wrap }
+
+      /* Details */
+      .details-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
+      .details .card { border:1px solid var(--border); border-radius:12px; padding:12px; background:var(--bg) }
+      .details .row { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:8px }
+      .details .avatar.sm { width:28px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:999px; border:1px solid var(--border) }
+      .shared-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:8px; margin-top:8px }
+      .shared-grid img { width:100%; height:80px; object-fit:cover; border-radius:8px; border:1px solid var(--border) }
+
+      /* Typing dots animation */
+      #typing { display:flex; align-items:center; gap:4px; padding:0 14px 10px }
+      #typing span { width:6px; height:6px; border-radius:999px; background: var(--muted); display:inline-block; animation: bounceDots 1.2s infinite ease-in-out }
+      #typing span:nth-child(1){ animation-delay: 0s }
+      #typing span:nth-child(2){ animation-delay: .15s }
+      #typing span:nth-child(3){ animation-delay: .3s }
+
+      /* Keyframes */
+      @keyframes fadeSlideUp { from { opacity:0; transform: translateY(8px) } to { opacity:1; transform: translateY(0) } }
+      @keyframes bounceDots { 0%, 80%, 100% { transform: translateY(0) } 40% { transform: translateY(-4px) } }
+      @keyframes ringGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,.35) } 50% { box-shadow: 0 0 0 6px rgba(16,185,129,.0) } }
+
+      /* Motion respect */
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; transition: none !important }
+      }
+    </style>
+  </body>
+</html>
+
+

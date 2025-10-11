@@ -1,0 +1,49 @@
+/* Browse page styles */
+@media (max-width: 920px) {
+  main.container { grid-template-columns: 1fr !important; }
+}
+
+.filter-group { margin-top: 8px; }
+.filter-body { padding: 8px 6px; }
+.filter-group .btn.btn-ghost { background: rgba(132, 209, 150, 0.216); border-color: rgba(124, 222, 143, 0.32); }
+html.dark .filter-group .btn.btn-ghost { background: rgba(125, 180, 126, 0.5); border-color: rgba(121, 230, 113, 0.08); }
+.filter-group label { display: flex; gap: 8px; align-items: center; }
+
+/* Sticky sidebar behavior for Browse */
+main.container > aside.sidebar {
+  position: sticky;
+  top: 92px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+/* Responsive filter tweaks */
+aside.sidebar .filter-body.hidden { display: none; }
+@media (max-width: 920px) {
+  aside.sidebar { order: 2; }
+}
+
+/* Luxury pagination */
+.pagination.luxury { display:flex; gap:10px; align-items:center; justify-content:center; margin:22px 0; flex-wrap:wrap }
+.pagination.luxury .page-btn { 
+  appearance:none; border:0; cursor:pointer; padding:10px 14px; border-radius:999px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.35));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(255,255,255,0.5);
+  color:#0f172a; font-weight:600; letter-spacing: .2px;
+}
+html.dark .pagination.luxury .page-btn {
+  background: linear-gradient(135deg, rgba(30,41,59,0.8), rgba(15,23,42,0.6));
+  color: #e5e7eb; box-shadow: 0 6px 18px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.pagination.luxury .page-btn.active { 
+  background: linear-gradient(135deg, #14e55a, #2afe54);
+  color:white; box-shadow: 0 10px 22px rgba(108, 162, 111, 0.35);
+}
+.pagination.luxury .page-btn.nav { padding:10px 12px }
+.pagination.luxury .page-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(255,255,255,0.6); }
+.pagination.luxury .page-btn.active:hover { transform:none }
+.pagination.luxury .page-btn[disabled] { opacity:.5; cursor:not-allowed }
+.pagination.luxury .sep { opacity:.6; padding:0 4px }
+
+
+

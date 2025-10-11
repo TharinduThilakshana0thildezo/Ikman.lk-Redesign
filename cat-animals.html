@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animals – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="/index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="/index.html">Home</a> / <span>Animals</span></div>
+      <h1>Animals</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=ani-1" data-id="ani-1" data-title="Puppies for Sale" data-price="45000" data-location="Colombo" data-img="https://picsum.photos/seed/puppy/600/400">
+          <button class="fav-btn" data-fav-id="ani-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/puppy/600/400" alt="Puppies for Sale" />
+          <div class="content">
+            <div class="title">Puppies for Sale</div>
+            <div class="meta"><span>Rs. 45,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=ani-2" data-id="ani-2" data-title="Persian Cat" data-price="65000" data-location="Kandy" data-img="https://picsum.photos/seed/cat1/600/400">
+          <button class="fav-btn" data-fav-id="ani-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/cat1/600/400" alt="Persian Cat" />
+          <div class="content">
+            <div class="title">Persian Cat</div>
+            <div class="meta"><span>Rs. 65,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=ani-3" data-id="ani-3" data-title="Parrots" data-price="12000" data-location="Galle" data-img="https://picsum.photos/seed/parrot/600/400">
+          <button class="fav-btn" data-fav-id="ani-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/parrot/600/400" alt="Parrots" />
+          <div class="content">
+            <div class="title">Parrots</div>
+            <div class="meta"><span>Rs. 12,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=ani-4" data-id="ani-4" data-title="Fish Aquarium Set" data-price="22000" data-location="Gampaha" data-img="https://picsum.photos/seed/fish/600/400">
+          <button class="fav-btn" data-fav-id="ani-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/fish/600/400" alt="Fish Aquarium Set" />
+          <div class="content">
+            <div class="title">Fish Aquarium Set</div>
+            <div class="meta"><span>Rs. 22,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-1" data-id="ani-1" data-title="Golden Retriever Puppies" data-price="55000" data-location="Colombo" data-img="https://picsum.photos/seed/golden/600/400">
+          <button class="fav-btn" data-fav-id="ani-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/golden/600/400" alt="Golden Retriever Puppies" />
+          <div class="content">
+            <div class="title">Golden Retriever Puppies</div>
+            <div class="meta"><span>Rs. 55,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-2" data-id="ani-2" data-title="Persian Kittens" data-price="65000" data-location="Kandy" data-img="https://picsum.photos/seed/persian/600/400">
+          <button class="fav-btn" data-fav-id="ani-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/persian/600/400" alt="Persian Kittens" />
+          <div class="content">
+            <div class="title">Persian Kittens</div>
+            <div class="meta"><span>Rs. 65,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-3" data-id="ani-3" data-title="Talking Parrot" data-price="18000" data-location="Galle" data-img="https://picsum.photos/seed/talkingparrot/600/400">
+          <button class="fav-btn" data-fav-id="ani-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/talkingparrot/600/400" alt="Talking Parrot" />
+          <div class="content">
+            <div class="title">Talking Parrot</div>
+            <div class="meta"><span>Rs. 18,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-4" data-id="ani-4" data-title="Fish Aquarium Set" data-price="22000" data-location="Gampaha" data-img="https://picsum.photos/seed/aquarium/600/400">
+          <button class="fav-btn" data-fav-id="ani-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/aquarium/600/400" alt="Fish Aquarium Set" />
+          <div class="content">
+            <div class="title">Fish Aquarium Set</div>
+            <div class="meta"><span>Rs. 22,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-5" data-id="ani-5" data-title="Love Birds Pair" data-price="9000" data-location="Matara" data-img="https://picsum.photos/seed/lovebirds/600/400">
+          <button class="fav-btn" data-fav-id="ani-5">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/lovebirds/600/400" alt="Love Birds Pair" />
+          <div class="content">
+            <div class="title">Love Birds Pair</div>
+            <div class="meta"><span>Rs. 9,000</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-6" data-id="ani-6" data-title="Labrador Puppies" data-price="60000" data-location="Negombo" data-img="https://picsum.photos/seed/labrador/600/400">
+          <button class="fav-btn" data-fav-id="ani-6">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/labrador/600/400" alt="Labrador Puppies" />
+          <div class="content">
+            <div class="title">Labrador Puppies</div>
+            <div class="meta"><span>Rs. 60,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-7" data-id="ani-7" data-title="Hamster with Cage" data-price="7500" data-location="Colombo" data-img="https://picsum.photos/seed/hamster/600/400">
+          <button class="fav-btn" data-fav-id="ani-7">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/hamster/600/400" alt="Hamster with Cage" />
+          <div class="content">
+            <div class="title">Hamster with Cage</div>
+            <div class="meta"><span>Rs. 7,500</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-8" data-id="ani-8" data-title="Turtle with Tank" data-price="12000" data-location="Kegalle" data-img="https://picsum.photos/seed/turtle/600/400">
+          <button class="fav-btn" data-fav-id="ani-8">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/turtle/600/400" alt="Turtle with Tank" />
+          <div class="content">
+            <div class="title">Turtle with Tank</div>
+            <div class="meta"><span>Rs. 12,000</span><span>Kegalle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-9" data-id="ani-9" data-title="German Shepherd Puppy" data-price="70000" data-location="Kurunegala" data-img="https://picsum.photos/seed/shepherd/600/400">
+          <button class="fav-btn" data-fav-id="ani-9">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/shepherd/600/400" alt="German Shepherd Puppy" />
+          <div class="content">
+            <div class="title">German Shepherd Puppy</div>
+            <div class="meta"><span>Rs. 70,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-10" data-id="ani-10" data-title="Rabbit Pair" data-price="10000" data-location="Matale" data-img="https://picsum.photos/seed/rabbit/600/400">
+          <button class="fav-btn" data-fav-id="ani-10">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/rabbit/600/400" alt="Rabbit Pair" />
+          <div class="content">
+            <div class="title">Rabbit Pair</div>
+            <div class="meta"><span>Rs. 10,000</span><span>Matale</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-11" data-id="ani-11" data-title="Cockatiel Bird" data-price="16000" data-location="Colombo" data-img="https://picsum.photos/seed/cockatiel/600/400">
+          <button class="fav-btn" data-fav-id="ani-11">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/cockatiel/600/400" alt="Cockatiel Bird" />
+          <div class="content">
+            <div class="title">Cockatiel Bird</div>
+            <div class="meta"><span>Rs. 16,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-12" data-id="ani-12" data-title="Pigeon Pair" data-price="5000" data-location="Anuradhapura" data-img="https://picsum.photos/seed/pigeon/600/400">
+          <button class="fav-btn" data-fav-id="ani-12">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/pigeon/600/400" alt="Pigeon Pair" />
+          <div class="content">
+            <div class="title">Pigeon Pair</div>
+            <div class="meta"><span>Rs. 5,000</span><span>Anuradhapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-13" data-id="ani-13" data-title="Siamese Cat" data-price="45000" data-location="Kandy" data-img="https://picsum.photos/seed/siamese/600/400">
+          <button class="fav-btn" data-fav-id="ani-13">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/siamese/600/400" alt="Siamese Cat" />
+          <div class="content">
+            <div class="title">Siamese Cat</div>
+            <div class="meta"><span>Rs. 45,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-14" data-id="ani-14" data-title="Budgie Birds Pair" data-price="4000" data-location="Ratnapura" data-img="https://picsum.photos/seed/budgie/600/400">
+          <button class="fav-btn" data-fav-id="ani-14">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/budgie/600/400" alt="Budgie Birds Pair" />
+          <div class="content">
+            <div class="title">Budgie Birds Pair</div>
+            <div class="meta"><span>Rs. 4,000</span><span>Ratnapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-15" data-id="ani-15" data-title="Chow Chow Puppy" data-price="95000" data-location="Colombo" data-img="https://picsum.photos/seed/chowchow/600/400">
+          <button class="fav-btn" data-fav-id="ani-15">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/chowchow/600/400" alt="Chow Chow Puppy" />
+          <div class="content">
+            <div class="title">Chow Chow Puppy</div>
+            <div class="meta"><span>Rs. 95,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-16" data-id="ani-16" data-title="Exotic Fish Collection" data-price="30000" data-location="Gampaha" data-img="https://picsum.photos/seed/exoticfish/600/400">
+          <button class="fav-btn" data-fav-id="ani-16">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/exoticfish/600/400" alt="Exotic Fish Collection" />
+          <div class="content">
+            <div class="title">Exotic Fish Collection</div>
+            <div class="meta"><span>Rs. 30,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-17" data-id="ani-17" data-title="Husky Puppies" data-price="120000" data-location="Nugegoda" data-img="https://picsum.photos/seed/husky/600/400">
+          <button class="fav-btn" data-fav-id="ani-17">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/husky/600/400" alt="Husky Puppies" />
+          <div class="content">
+            <div class="title">Husky Puppies</div>
+            <div class="meta"><span>Rs. 120,000</span><span>Nugegoda</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-18" data-id="ani-18" data-title="Macaw Parrot" data-price="150000" data-location="Colombo" data-img="https://picsum.photos/seed/macaw/600/400">
+          <button class="fav-btn" data-fav-id="ani-18">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/macaw/600/400" alt="Macaw Parrot" />
+          <div class="content">
+            <div class="title">Macaw Parrot</div>
+            <div class="meta"><span>Rs. 150,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-19" data-id="ani-19" data-title="Pet Accessories Bundle" data-price="8000" data-location="Kalutara" data-img="https://picsum.photos/seed/petaccessories/600/400">
+          <button class="fav-btn" data-fav-id="ani-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/petaccessories/600/400" alt="Pet Accessories Bundle" />
+          <div class="content">
+            <div class="title">Pet Accessories Bundle</div>
+            <div class="meta"><span>Rs. 8,000</span><span>Kalutara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=ani-20" data-id="ani-20" data-title="Pet Cage - Large Size" data-price="15000" data-location="Colombo" data-img="https://picsum.photos/seed/petcage/600/400">
+          <button class="fav-btn" data-fav-id="ani-20">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/petcage/600/400" alt="Pet Cage - Large Size" />
+          <div class="content">
+            <div class="title">Pet Cage - Large Size</div>
+            <div class="meta"><span>Rs. 15,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

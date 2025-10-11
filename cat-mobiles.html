@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobiles – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Mobiles</span></div>
+      <h1>Mobiles</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=mob-1" data-id="mob-1" data-title="iPhone 13 Pro" data-price="325000" data-location="Colombo" data-img="https://picsum.photos/seed/iphone13/600/400">
+          <button class="fav-btn" data-fav-id="mob-1">❤</button>
+          <img loading="lazy" class="thumb" src="Img/iPhone 13 Pro.jpg" alt="iPhone 13 Pro" />
+          <div class="content">
+            <div class="title">iPhone 13 Pro</div>
+            <div class="meta"><span>Rs. 325,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=mob-2" data-id="mob-2" data-title="Samsung S22" data-price="285000" data-location="Kandy" data-img="https://picsum.photos/seed/galaxy/600/400">
+          <button class="fav-btn" data-fav-id="mob-2">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Samsung S22.jpg" alt="Samsung S22" />
+          <div class="content">
+            <div class="title">Samsung S22</div>
+            <div class="meta"><span>Rs. 285,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=mob-3" data-id="mob-3" data-title="OnePlus 9" data-price="210000" data-location="Galle" data-img="https://picsum.photos/seed/oneplus/600/400">
+          <button class="fav-btn" data-fav-id="mob-3">❤</button>
+          <img loading="lazy" class="thumb" src="Img/OnePlus 9.jpg" alt="OnePlus 9" />
+          <div class="content">
+            <div class="title">OnePlus 9</div>
+            <div class="meta"><span>Rs. 210,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=mob-4" data-id="mob-4" data-title="Xiaomi Mi 11" data-price="165000" data-location="Kurunegala" data-img="https://picsum.photos/seed/mi11/600/400">
+          <button class="fav-btn" data-fav-id="mob-4">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Xiaomi Mi 11.jpg" alt="Xiaomi Mi 11" />
+          <div class="content">
+            <div class="title">Xiaomi Mi 11</div>
+            <div class="meta"><span>Rs. 165,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=mob-1" data-id="mob-1" data-title="iPhone 15 Pro Max" data-price="475000" data-location="Colombo" data-img="https://picsum.photos/seed/iphone15/600/400">
+          <button class="fav-btn" data-fav-id="mob-1">❤</button>
+          <img loading="lazy" class="thumb" src="Img/iPhone 15 Pro Max.jpg" alt="iPhone 15 Pro Max" />
+          <div class="content">
+            <div class="title">iPhone 15 Pro Max</div>
+            <div class="meta"><span>Rs. 475,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-2" data-id="mob-2" data-title="Samsung Galaxy S24 Ultra" data-price="420000" data-location="Kandy" data-img="https://picsum.photos/seed/s24ultra/600/400">
+          <button class="fav-btn" data-fav-id="mob-2">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Samsung Galaxy S24 Ultra.jpg" alt="Samsung Galaxy S24 Ultra" />
+          <div class="content">
+            <div class="title">Samsung Galaxy S24 Ultra</div>
+            <div class="meta"><span>Rs. 420,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-3" data-id="mob-3" data-title="Google Pixel 8 Pro" data-price="360000" data-location="Negombo" data-img="https://picsum.photos/seed/pixel8pro/600/400">
+          <button class="fav-btn" data-fav-id="mob-3">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Google Pixel 8 Pro.jpg" alt="Google Pixel 8 Pro" />
+          <div class="content">
+            <div class="title">Google Pixel 8 Pro</div>
+            <div class="meta"><span>Rs. 360,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-4" data-id="mob-4" data-title="OnePlus 12" data-price="295000" data-location="Galle" data-img="https://picsum.photos/seed/oneplus12/600/400">
+          <button class="fav-btn" data-fav-id="mob-4">❤</button>
+          <img loading="lazy" class="thumb" src="Img/OnePlus 12.jpg" alt="OnePlus 12" />
+          <div class="content">
+            <div class="title">OnePlus 12</div>
+            <div class="meta"><span>Rs. 295,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-5" data-id="mob-5" data-title="Xiaomi 14 Pro" data-price="265000" data-location="Kurunegala" data-img="https://picsum.photos/seed/xiaomi14/600/400">
+          <button class="fav-btn" data-fav-id="mob-5">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Xiaomi 14 Pro.jpg" alt="Xiaomi 14 Pro" />
+          <div class="content">
+            <div class="title">Xiaomi 14 Pro</div>
+            <div class="meta"><span>Rs. 265,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-6" data-id="mob-6" data-title="Oppo Find X7" data-price="245000" data-location="Matara" data-img="https://picsum.photos/seed/oppoX7/600/400">
+          <button class="fav-btn" data-fav-id="mob-6">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Oppo Find X7.jpg" alt="Oppo Find X7" />
+          <div class="content">
+            <div class="title">Oppo Find X7</div>
+            <div class="meta"><span>Rs. 245,000</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-7" data-id="mob-7" data-title="Vivo X100 Pro" data-price="230000" data-location="Anuradhapura" data-img="https://picsum.photos/seed/vivox100/600/400">
+          <button class="fav-btn" data-fav-id="mob-7">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Vivo X100 Pro.webp" alt="Vivo X100 Pro" />
+          <div class="content">
+            <div class="title">Vivo X100 Pro</div>
+            <div class="meta"><span>Rs. 230,000</span><span>Anuradhapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-8" data-id="mob-8" data-title="Realme GT 6" data-price="210000" data-location="Rathnapura" data-img="https://picsum.photos/seed/realmegt6/600/400">
+          <button class="fav-btn" data-fav-id="mob-8">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Realme GT 6.jpg" alt="Realme GT 6" />
+          <div class="content">
+            <div class="title">Realme GT 6</div>
+            <div class="meta"><span>Rs. 210,000</span><span>Rathnapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-9" data-id="mob-9" data-title="Huawei P60 Pro" data-price="185000" data-location="Jaffna" data-img="https://picsum.photos/seed/huaweip60/600/400">
+          <button class="fav-btn" data-fav-id="mob-9">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Huawei P60 Pro.jpeg" alt="Huawei P60 Pro" />
+          <div class="content">
+            <div class="title">Huawei P60 Pro</div>
+            <div class="meta"><span>Rs. 185,000</span><span>Jaffna</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-10" data-id="mob-10" data-title="Nothing Phone 2" data-price="175000" data-location="Batticaloa" data-img="https://picsum.photos/seed/nothing2/600/400">
+          <button class="fav-btn" data-fav-id="mob-10">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Nothing Phone 2.webp" alt="Nothing Phone 2" />
+          <div class="content">
+            <div class="title">Nothing Phone 2</div>
+            <div class="meta"><span>Rs. 175,000</span><span>Batticaloa</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=mob-9" data-id="mob-9" data-title="Huawei P60 Pro" data-price="185000" data-location="Jaffna" data-img="https://picsum.photos/seed/huaweip60/600/400">
+          <button class="fav-btn" data-fav-id="mob-9">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Huawei P60 Pro.jpeg" alt="Huawei P60 Pro" />
+          <div class="content">
+            <div class="title">Huawei P60 Pro</div>
+            <div class="meta"><span>Rs. 185,000</span><span>Jaffna</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=mob-10" data-id="mob-10" data-title="Nothing Phone 2" data-price="175000" data-location="Batticaloa" data-img="https://picsum.photos/seed/nothing2/600/400">
+          <button class="fav-btn" data-fav-id="mob-10">❤</button>
+          <img loading="lazy" class="thumb" src="Img/Nothing Phone 2.webp" alt="Nothing Phone 2" />
+          <div class="content">
+            <div class="title">Nothing Phone 2</div>
+            <div class="meta"><span>Rs. 175,000</span><span>Batticaloa</span></div>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home & Garden – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Home &amp; Garden</span></div>
+      <h1>Home &amp; Garden</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=home-1" data-id="home-1" data-title="Office Chair" data-price="28000" data-location="Gampaha" data-img="https://picsum.photos/seed/chair2/600/400">
+          <button class="fav-btn" data-fav-id="home-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/chair2/600/400" alt="Office Chair" />
+          <div class="content">
+            <div class="title">Office Chair</div>
+            <div class="meta"><span>Rs. 28,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=home-2" data-id="home-2" data-title="Dining Table Set" data-price="125000" data-location="Colombo" data-img="https://picsum.photos/seed/dining2/600/400">
+          <button class="fav-btn" data-fav-id="home-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/dining2/600/400" alt="Dining Table Set" />
+          <div class="content">
+            <div class="title">Dining Table Set</div>
+            <div class="meta"><span>Rs. 125,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=home-3" data-id="home-3" data-title="Sofa 3 Seater" data-price="155000" data-location="Gampaha" data-img="https://picsum.photos/seed/sofa2/600/400">
+          <button class="fav-btn" data-fav-id="home-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/sofa2/600/400" alt="Sofa 3 Seater" />
+          <div class="content">
+            <div class="title">Sofa 3 Seater</div>
+            <div class="meta"><span>Rs. 155,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=home-4" data-id="home-4" data-title="Single Door Fridge" data-price="82000" data-location="Galle" data-img="https://picsum.photos/seed/fridge2/600/400">
+          <button class="fav-btn" data-fav-id="home-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/fridge2/600/400" alt="Single Door Fridge" />
+          <div class="content">
+            <div class="title">Single Door Fridge</div>
+            <div class="meta"><span>Rs. 82,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-1" data-id="home-1" data-title="Office Chair" data-price="28000" data-location="Gampaha" data-img="https://example.com/images/office_chair.jpg">
+          <button class="fav-btn" data-fav-id="home-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/office_chair.jpg" alt="Office Chair" />
+          <div class="content">
+            <div class="title">Office Chair</div>
+            <div class="meta"><span>Rs. 28,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-2" data-id="home-2" data-title="Dining Table Set" data-price="125000" data-location="Colombo" data-img="https://example.com/images/dining_table_set.jpg">
+          <button class="fav-btn" data-fav-id="home-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/dining_table_set.jpg" alt="Dining Table Set" />
+          <div class="content">
+            <div class="title">Dining Table Set</div>
+            <div class="meta"><span>Rs. 125,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-3" data-id="home-3" data-title="Sofa 3 Seater" data-price="155000" data-location="Gampaha" data-img="https://example.com/images/sofa_3_seater.jpg">
+          <button class="fav-btn" data-fav-id="home-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/sofa_3_seater.jpg" alt="Sofa 3 Seater" />
+          <div class="content">
+            <div class="title">Sofa 3 Seater</div>
+            <div class="meta"><span>Rs. 155,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-4" data-id="home-4" data-title="Single Door Fridge" data-price="82000" data-location="Galle" data-img="https://example.com/images/fridge_single_door.jpg">
+          <button class="fav-btn" data-fav-id="home-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/fridge_single_door.jpg" alt="Single Door Fridge" />
+          <div class="content">
+            <div class="title">Single Door Fridge</div>
+            <div class="meta"><span>Rs. 82,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-5" data-id="home-5" data-title="Queen Bed Frame" data-price="67000" data-location="Kandy" data-img="https://example.com/images/bed_frame_queen.jpg">
+          <button class="fav-btn" data-fav-id="home-5">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/bed_frame_queen.jpg" alt="Queen Bed Frame" />
+          <div class="content">
+            <div class="title">Queen Bed Frame</div>
+            <div class="meta"><span>Rs. 67,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-6" data-id="home-6" data-title="Wardrobe 4-door" data-price="105000" data_location="Colombo" data-img="https://example.com/images/wardrobe_4door.jpg">
+          <button class="fav-btn" data-fav-id="home-6">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/wardrobe_4door.jpg" alt="Wardrobe 4-door" />
+          <div class="content">
+            <div class="title">Wardrobe 4-door</div>
+            <div class="meta"><span>Rs. 105,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-7" data-id="home-7" data-title="LED Floor Lamp" data-price="9500" data-location="Negombo" data-img="https://example.com/images/floor_lamp_led.jpg">
+          <button class="fav-btn" data-fav-id="home-7">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/floor_lamp_led.jpg" alt="LED Floor Lamp" />
+          <div class="content">
+            <div class="title">LED Floor Lamp</div>
+            <div the="meta"><span>Rs. 9,500</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-8" data-id="home-8" data-title="Garden Swing Seat" data-price="42000" data-location="Negombo" data-img="https://example.com/images/garden_swing.jpg">
+          <button class="fav-btn" data-fav-id="home-8">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/garden_swing.jpg" alt="Garden Swing Seat" />
+          <div class="content">
+            <div class="title">Garden Swing Seat</div>
+            <div the="meta"><span>Rs. 42,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-9" data-id="home-9" data-title="Patio Table & Chairs" data-price="51000" data-location="Matara" data-img="https://example.com/images/patio_table_chairs.jpg">
+          <button class="fav-btn" data-fav-id="home-9">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/patio_table_chairs.jpg" alt="Patio Table & Chairs" />
+          <div class="content">
+            <div class="title">Patio Table & Chairs</div>
+            <div class="meta"><span>Rs. 51,000</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-10" data-id="home-10" data-title="Wall Mirror (Large)" data-price="15500" data-location="Gampaha" data-img="https://example.com/images/large_wall_mirror.jpg">
+          <button class="fav-btn" data-fav-id="home-10">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/large_wall_mirror.jpg" alt="Wall Mirror (Large)" />
+          <div class="content">
+            <div class="title">Wall Mirror (Large)</div>
+            <div the="meta"><span>Rs. 15,500</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-11" data-id="home-11" data-title="Bookshelf 5-tier" data-price="32000" data-location="Colombo" data-img="https://example.com/images/bookshelf_5tier.jpg">
+          <button class="fav-btn" data-fav-id="home-11">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/bookshelf_5tier.jpg" alt="Bookshelf 5-tier" />
+          <div class="content">
+            <div class="title">Bookshelf 5-tier</div>
+            <div class="meta"><span>Rs. 32,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-12" data-id="home-12" data-title="Kitchen Island & Storage" data-price="98000" data-location="Kandy" data-img="https://example.com/images/kitchen_island_storage.jpg">
+          <button class="fav-btn" data-fav-id="home-12">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/kitchen_island_storage.jpg" alt="Kitchen Island & Storage" />
+          <div class="content">
+            <div class="title">Kitchen Island & Storage</div>
+            <div class="meta"><span>Rs. 98,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-13" data-id="home-13" data-title="Area Rug 8×10 ft" data-price="22000" data-location="Galle" data-img="https://example.com/images/area_rug_8x10.jpg">
+          <button class="fav-btn" data-fav-id="home-13">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/area_rug_8x10.jpg" alt="Area Rug 8×10 ft" />
+          <div class="content">
+            <div class="title">Area Rug 8×10 ft</div>
+            <div class="meta"><span>Rs. 22,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-14" data-id="home-14" data-title="Ceramic Plant Pots (Set of 4)" data-price="7500" data-location="Kurunegala" data-img="https://example.com/images/ceramic_pots_set4.jpg">
+          <button class="fav-btn" data-fav-id="home-14">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/ceramic_pots_set4.jpg" alt="Ceramic Plant Pots (Set of 4)" />
+          <div class="content">
+            <div class="title">Ceramic Plant Pots (Set of 4)</div>
+            <div the="meta"><span>Rs. 7,500</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-15" data-id="home-15" data-title="Outdoor Umbrella 2m" data-price="12000" data-location="Matara" data-img="https://example.com/images/outdoor_umbrella_2m.jpg">
+          <button class="fav-btn" data-fav-id="home-15">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/outdoor_umbrella_2m.jpg" alt="Outdoor Umbrella 2m" />
+          <div class="content">
+            <div the="title">Outdoor Umbrella 2m</div>
+            <div the="meta"><span>Rs. 12,000</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-16" data-id="home-16" data-title="Garden Hose Reel Set" data-price="6500" data-location="Anuradhapura" data-img="https://example.com/images/hose_reel_set.jpg">
+          <button class="fav-btn" data-fav-id="home-16">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/hose_reel_set.jpg" alt="Garden Hose Reel Set" />
+          <div class="content">
+            <div class="title">Garden Hose Reel Set</div>
+            <div the="meta"><span>Rs. 6,500</span><span>Anuradhapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-17" data-id="home-17" data-title="Barbecue Grill (Charcoal)" data-price="29500" data-location="Rathnapura" data-img="https://example.com/images/charcoal_grill.jpg">
+          <button class="fav-btn" data-fav-id="home-17">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/charcoal_grill.jpg" alt="Barbecue Grill (Charcoal)" />
+          <div class="content">
+            <div class="title">Barbecue Grill (Charcoal)</div>
+            <div the="meta"><span>Rs. 29,500</span><span>Rathnapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-18" data-id="home-18" data-title="LED Ceiling Fan" data-price="10500" data-location="Kandy" data-img="https://example.com/images/led_ceiling_fan.jpg">
+          <button class="fav-btn" data-fav-id="home-18">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/led_ceiling_fan.jpg" alt="LED Ceiling Fan" />
+          <div class="content">
+            <div class="title">LED Ceiling Fan</div>
+            <div class="meta"><span>Rs. 10,500</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-19" data-id="home-19" data-title="Wall Clock Decorative" data-price="3200" data-location="Colombo" data-img="https://example.com/images/decorative_wall_clock.jpg">
+          <button class="fav-btn" data-fav-id="home-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/decorative_wall_clock.jpg" alt="Wall Clock Decorative" />
+          <div class="content">
+            <div class="title">Wall Clock Decorative</div>
+            <div the="meta"><span>Rs. 3,200</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=home-20" data-id="home-20" data-title="Floor Lamp LED" data-price="8500" data-location="Galle" data-img="https://example.com/images/floor_lamp_led2.jpg">
+          <button class="fav-btn" data-fav-id="home-20">❤</button>
+          <img loading="lazy" class="thumb" src="https://example.com/images/floor_lamp_led2.jpg" alt="Floor Lamp LED" />
+          <div class="content">
+            <div the="title">Floor Lamp LED</div>
+            <div the="meta"><span>Rs. 8,500</span><span>Galle</span></div>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Business & Industry – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="/index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Business &amp; Industry</span></div>
+      <h1>Business &amp; Industry</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=bus-1" data-id="bus-1" data-title="Industrial Drill" data-price="265000" data-location="Colombo" data-img="https://picsum.photos/seed/drill/600/400">
+          <button class="fav-btn" data-fav-id="bus-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/drill/600/400" alt="Industrial Drill" />
+          <div class="content">
+            <div class="title">Industrial Drill</div>
+            <div class="meta"><span>Rs. 265,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-2" data-id="bus-2" data-title="Office Desk Bulk" data-price="480000" data-location="Galle" data-img="https://picsum.photos/seed/deskbulk/600/400">
+          <button class="fav-btn" data-fav-id="bus-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/deskbulk/600/400" alt="Office Desk Bulk" />
+          <div class="content">
+            <div class="title">Office Desk Bulk</div>
+            <div class="meta"><span>Rs. 480,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-3" data-id="bus-3" data-title="Warehouse Shelving" data-price="320000" data-location="Kandy" data-img="https://picsum.photos/seed/shelf/600/400">
+          <button class="fav-btn" data-fav-id="bus-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/shelf/600/400" alt="Warehouse Shelving" />
+          <div class="content">
+            <div class="title">Warehouse Shelving</div>
+            <div class="meta"><span>Rs. 320,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-4" data-id="bus-4" data-title="Generator 10kVA" data-price="1450000" data-location="Colombo" data-img="https://picsum.photos/seed/gen/600/400">
+          <button class="fav-btn" data-fav-id="bus-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/gen/600/400" alt="Generator 10kVA" />
+          <div class="content">
+            <div class="title">Generator 10kVA</div>
+            <div class="meta"><span>Rs. 1,450,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-1" data-id="bus-1" data-title="Industrial Drill" data-price="265000" data-location="Colombo" data-img="https://picsum.photos/seed/drill/600/400">
+          <button class="fav-btn" data-fav-id="bus-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/drill/600/400" alt="Industrial Drill" />
+          <div class="content">
+            <div class="title">Industrial Drill</div>
+            <div class="meta"><span>Rs. 265,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=bus-2" data-id="bus-2" data-title="Office Desk Bulk" data-price="480000" data-location="Galle" data-img="https://picsum.photos/seed/deskbulk/600/400">
+          <button class="fav-btn" data-fav-id="bus-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/deskbulk/600/400" alt="Office Desk Bulk" />
+          <div class="content">
+            <div class="title">Office Desk Bulk</div>
+            <div class="meta"><span>Rs. 480,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-3" data-id="bus-3" data-title="Warehouse Shelving" data-price="320000" data-location="Kandy" data-img="https://picsum.photos/seed/shelf/600/400">
+          <button class="fav-btn" data-fav-id="bus-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/shelf/600/400" alt="Warehouse Shelving" />
+          <div class="content">
+            <div class="title">Warehouse Shelving</div>
+            <div class="meta"><span>Rs. 320,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-4" data-id="bus-4" data-title="Generator 10kVA" data-price="1450000" data-location="Colombo" data-img="https://picsum.photos/seed/gen/600/400">
+          <button class="fav-btn" data-fav-id="bus-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/gen/600/400" alt="Generator 10kVA" />
+          <div class="content">
+            <div class="title">Generator 10kVA</div>
+            <div class="meta"><span>Rs. 1,450,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-5" data-id="bus-5" data-title="Forklift 2.5 Ton" data-price="1850000" data-location="Colombo" data-img="https://picsum.photos/seed/forklift/600/400">
+          <button class="fav-btn" data-fav-id="bus-5">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/forklift/600/400" alt="Forklift 2.5 Ton" />
+          <div class="content">
+            <div class="title">Forklift 2.5 Ton</div>
+            <div class="meta"><span>Rs. 1,850,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-6" data-id="bus-6" data-title="Commercial Printer" data-price="320000" data-location="Negombo" data-img="https://picsum.photos/seed/printer/600/400">
+          <button class="fav-btn" data-fav-id="bus-6">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/printer/600/400" alt="Commercial Printer" />
+          <div class="content">
+            <div class="title">Commercial Printer</div>
+            <div class="meta"><span>Rs. 320,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-7" data-id="bus-7" data-title="Industrial Mixer" data-price="420000" data-location="Kurunegala" data-img="https://picsum.photos/seed/mixer/600/400">
+          <button class="fav-btn" data-fav-id="bus-7">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/mixer/600/400" alt="Industrial Mixer" />
+          <div class="content">
+            <div class="title">Industrial Mixer</div>
+            <div class="meta"><span>Rs. 420,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-8" data-id="bus-8" data-title="Office Chairs Set" data-price="125000" data-location="Gampaha" data-img="https://picsum.photos/seed/chairs/600/400">
+          <button class="fav-btn" data-fav-id="bus-8">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/chairs/600/400" alt="Office Chairs Set" />
+          <div class="content">
+            <div class="title">Office Chairs Set</div>
+            <div class="meta"><span>Rs. 125,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-9" data-id="bus-9" data-title="Industrial Oven" data-price="680000" data-location="Colombo" data-img="https://picsum.photos/seed/oven/600/400">
+          <button class="fav-btn" data-fav-id="bus-9">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/oven/600/400" alt="Industrial Oven" />
+          <div class="content">
+            <div class="title">Industrial Oven</div>
+            <div class="meta"><span>Rs. 680,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-10" data-id="bus-10" data-title="Water Pump 5HP" data-price="185000" data-location="Matara" data-img="https://picsum.photos/seed/pump/600/400">
+          <button class="fav-btn" data-fav-id="bus-10">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/pump/600/400" alt="Water Pump 5HP" />
+          <div class="content">
+            <div class="title">Water Pump 5HP</div>
+            <div class="meta"><span>Rs. 185,000</span><span>Matara</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-11" data-id="bus-11" data-title="Commercial Fridge" data-price="245000" data-location="Kandy" data-img="https://picsum.photos/seed/fridge/600/400">
+          <button class="fav-btn" data-fav-id="bus-11">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/fridge/600/400" alt="Commercial Fridge" />
+          <div class="content">
+            <div class="title">Commercial Fridge</div>
+            <div class="meta"><span>Rs. 245,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-12" data-id="bus-12" data-title="Power Tools Set" data-price="85000" data-location="Colombo" data-img="https://picsum.photos/seed/tools/600/400">
+          <button class="fav-btn" data-fav-id="bus-12">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/tools/600/400" alt="Power Tools Set" />
+          <div class="content">
+            <div class="title">Power Tools Set</div>
+            <div class="meta"><span>Rs. 85,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-13" data-id="bus-13" data-title="Industrial Sewing Machine" data-price="95000" data-location="Galle" data-img="https://picsum.photos/seed/sewing/600/400">
+          <button class="fav-btn" data-fav-id="bus-13">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/sewing/600/400" alt="Industrial Sewing Machine" />
+          <div class="content">
+            <div class="title">Industrial Sewing Machine</div>
+            <div class="meta"><span>Rs. 95,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-14" data-id="bus-14" data-title="Commercial Blender" data-price="65000" data-location="Negombo" data-img="https://picsum.photos/seed/blender/600/400">
+          <button class="fav-btn" data-fav-id="bus-14">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/blender/600/400" alt="Commercial Blender" />
+          <div class="content">
+            <div class="title">Commercial Blender</div>
+            <div class="meta"><span>Rs. 65,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-15" data-id="bus-15" data-title="Air Compressor" data-price="185000" data-location="Kurunegala" data-img="https://picsum.photos/seed/compressor/600/400">
+          <button class="fav-btn" data-fav-id="bus-15">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/compressor/600/400" alt="Air Compressor" />
+          <div class="content">
+            <div class="title">Air Compressor</div>
+            <div class="meta"><span>Rs. 185,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-16" data-id="bus-16" data-title="Industrial Weighing Scale" data-price="125000" data-location="Colombo" data-img="https://picsum.photos/seed/scale/600/400">
+          <button class="fav-btn" data-fav-id="bus-16">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/scale/600/400" alt="Industrial Weighing Scale" />
+          <div class="content">
+            <div class="title">Industrial Weighing Scale</div>
+            <div class="meta"><span>Rs. 125,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-17" data-id="bus-17" data-title="Commercial Toaster" data-price="45000" data-location="Matara" data-img="https://picsum.photos/seed/toaster/600/400">
+          <button class="fav-btn" data-fav-id="bus-17">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/toaster/600/400" alt="Commercial Toaster" />
+          <div class="content">
+            <div class="title">Commercial Toaster</div>
+            <div class="meta"><span>Rs. 45,000</span><span>Matara</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-18" data-id="bus-18" data-title="Packaging Machine" data-price="320000" data-location="Gampaha" data-img="https://picsum.photos/seed/packaging/600/400">
+          <button class="fav-btn" data-fav-id="bus-18">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/packaging/600/400" alt="Packaging Machine" />
+          <div class="content">
+            <div class="title">Packaging Machine</div>
+            <div class="meta"><span>Rs. 320,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-19" data-id="bus-19" data-title="Industrial Fan" data-price="75000" data-location="Kandy" data-img="https://picsum.photos/seed/fan/600/400">
+          <button class="fav-btn" data-fav-id="bus-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/fan/600/400" alt="Industrial Fan" />
+          <div class="content">
+            <div class="title">Industrial Fan</div>
+            <div class="meta"><span>Rs. 75,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-20" data-id="bus-20" data-title="Commercial Microwave" data-price="85000" data-location="Colombo" data-img="https://picsum.photos/seed/microwave/600/400">
+          <button class="fav-btn" data-fav-id="bus-20">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/microwave/600/400" alt="Commercial Microwave" />
+          <div class="content">
+            <div class="title">Commercial Microwave</div>
+            <div class="meta"><span>Rs. 85,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-21" data-id="bus-21" data-title="Industrial Grinder" data-price="195000" data-location="Galle" data-img="https://picsum.photos/seed/grinder/600/400">
+          <button class="fav-btn" data-fav-id="bus-21">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/grinder/600/400" alt="Industrial Grinder" />
+          <div class="content">
+            <div class="title">Industrial Grinder</div>
+            <div class="meta"><span>Rs. 195,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-22" data-id="bus-22" data-title="Commercial Freezer" data-price="285000" data-location="Negombo" data-img="https://picsum.photos/seed/freezer/600/400">
+          <button class="fav-btn" data-fav-id="bus-22">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/freezer/600/400" alt="Commercial Freezer" />
+          <div class="content">
+            <div class="title">Commercial Freezer</div>
+            <div class="meta"><span>Rs. 285,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-23" data-id="bus-23" data-title="Industrial Press" data-price="420000" data-location="Kurunegala" data-img="https://picsum.photos/seed/press/600/400">
+          <button class="fav-btn" data-fav-id="bus-23">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/press/600/400" alt="Industrial Press" />
+          <div class="content">
+            <div class="title">Industrial Press</div>
+            <div class="meta"><span>Rs. 420,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-24" data-id="bus-24" data-title="Office Cabinets Set" data-price="135000" data-location="Gampaha" data-img="https://picsum.photos/seed/cabinets/600/400">
+          <button class="fav-btn" data-fav-id="bus-24">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/cabinets/600/400" alt="Office Cabinets Set" />
+          <div class="content">
+            <div class="title">Office Cabinets Set</div>
+            <div class="meta"><span>Rs. 135,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-25" data-id="bus-25" data-title="Industrial Welder" data-price="185000" data-location="Colombo" data-img="https://picsum.photos/seed/welder/600/400">
+          <button class="fav-btn" data-fav-id="bus-25">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/welder/600/400" alt="Industrial Welder" />
+          <div class="content">
+            <div class="title">Industrial Welder</div>
+            <div class="meta"><span>Rs. 185,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-26" data-id="bus-26" data-title="Commercial Coffee Machine" data-price="125000" data-location="Matara" data-img="https://picsum.photos/seed/coffee/600/400">
+          <button class="fav-btn" data-fav-id="bus-26">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/coffee/600/400" alt="Commercial Coffee Machine" />
+          <div class="content">
+            <div class="title">Commercial Coffee Machine</div>
+            <div class="meta"><span>Rs. 125,000</span><span>Matara</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-27" data-id="bus-27" data-title="Industrial Cutter" data-price="95000" data-location="Kandy" data-img="https://picsum.photos/seed/cutter/600/400">
+          <button class="fav-btn" data-fav-id="bus-27">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/cutter/600/400" alt="Industrial Cutter" />
+          <div class="content">
+            <div class="title">Industrial Cutter</div>
+            <div class="meta"><span>Rs. 95,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-28" data-id="bus-28" data-title="Commercial Display Counter" data-price="185000" data-location="Colombo" data-img="https://picsum.photos/seed/counter/600/400">
+          <button class="fav-btn" data-fav-id="bus-28">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/counter/600/400" alt="Commercial Display Counter" />
+          <div class="content">
+            <div class="title">Commercial Display Counter</div>
+            <div class="meta"><span>Rs. 185,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-29" data-id="bus-29" data-title="Industrial Lathe Machine" data-price="650000" data-location="Galle" data-img="https://picsum.photos/seed/lathe/600/400">
+          <button class="fav-btn" data-fav-id="bus-29">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/lathe/600/400" alt="Industrial Lathe Machine" />
+          <div class="content">
+            <div class="title">Industrial Lathe Machine</div>
+            <div class="meta"><span>Rs. 650,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-30" data-id="bus-30" data-title="Commercial Dishwasher" data-price="195000" data-location="Negombo" data-img="https://picsum.photos/seed/dishwasher/600/400">
+          <button class="fav-btn" data-fav-id="bus-30">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/dishwasher/600/400" alt="Commercial Dishwasher" />
+          <div class="content">
+            <div class="title">Commercial Dishwasher</div>
+            <div class="meta"><span>Rs. 195,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-10" data-id="bus-10" data-title="Water Pump 5HP" data-price="185000" data-location="Matara" data-img="https://picsum.photos/seed/pump/600/400">
+          <button class="fav-btn" data-fav-id="bus-10">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/pump/600/400" alt="Water Pump 5HP" />
+          <div class="content">
+            <div class="title">Water Pump 5HP</div>
+            <div class="meta"><span>Rs. 185,000</span><span>Matara</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=bus-11" data-id="bus-11" data-title="Commercial Fridge" data-price="245000" data-location="Kandy" data-img="https://picsum.photos/seed/fridge/600/400">
+          <button class="fav-btn" data-fav-id="bus-11">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/fridge/600/400" alt="Commercial Fridge" />
+          <div class="content">
+            <div class="title">Commercial Fridge</div>
+            <div class="meta"><span>Rs. 245,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

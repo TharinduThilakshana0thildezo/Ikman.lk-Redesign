@@ -1,0 +1,40 @@
+/* Profile page - luxury redesign */
+.glass > .muted strong { color: var(--color-text); }
+
+.profile-hero { position: relative; overflow: hidden; border-radius: 22px; padding: 18px; display:flex; align-items:center; justify-content:space-between; background: radial-gradient(1200px 400px at 20% -20%, rgba(22,163,74,0.18), transparent), radial-gradient(800px 300px at 90% 0%, rgba(243,156,18,0.18), transparent), var(--color-surface); box-shadow: var(--shadow-lg); }
+.profile-left { display:flex; align-items:center; gap:14px }
+.avatar { width:84px; height:84px; border-radius:22px; background: rgba(0,0,0,0.06); overflow:hidden; border:1px solid rgba(255,255,255,0.4) }
+.name-row { display:flex; align-items:center; gap:8px }
+.name-row .verified { background: linear-gradient(180deg, rgba(22,163,74,0.18), rgba(22,163,74,0.08)); color:#16a34a; border-radius:999px; padding:4px 8px; font-size:12px; font-weight:700 }
+.profile-actions { display:flex; gap:8px }
+.stat-chips { display:flex; gap:8px; flex-wrap:wrap }
+.chip-lg { display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:14px; background: rgba(255,255,255,0.6); border:1px solid rgba(17,24,39,0.08); font-weight:600 }
+html.dark .chip-lg { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+
+.profile-tabs { margin-top:16px; display:flex; gap:8px; flex-wrap:wrap }
+.tab { padding:8px 12px; border-radius:12px; background: rgba(255,255,255,0.55); border:1px solid rgba(17,24,39,0.08); cursor:pointer }
+.tab.active { background: linear-gradient(90deg, rgba(22,163,74,0.15), rgba(22,163,74,0.05)); border-color: rgba(22,163,74,0.35) }
+html.dark .tab { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+
+.panel { background: var(--color-surface); border:1px solid rgba(255,255,255,0.3); border-radius:18px; padding:16px; box-shadow: var(--shadow-md) }
+.two-col { display:grid; grid-template-columns: 1.1fr 0.9fr; gap:20px }
+
+.info-list { display:grid; gap:8px }
+.info-row { display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border-radius:12px; background: rgba(255,255,255,0.6); border:1px solid rgba(17,24,39,0.08) }
+html.dark .info-row { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+.badge-pro { padding:6px 10px; border-radius:999px; background: linear-gradient(90deg, #f39c12, #f59e0b); color:#111827; font-weight:700; font-size:12px }
+
+.reviews { display:grid; gap:10px }
+.review { display:flex; gap:10px; padding:12px; border-radius:14px; background: rgba(255,255,255,0.6); border:1px solid rgba(17,24,39,0.08) }
+html.dark .review { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+.review .avatar { width:44px; height:44px; border-radius:12px }
+.stars { color:#f59e0b }
+
+.settings-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px }
+.setting-card { padding:14px; border-radius:14px; background: rgba(255,255,255,0.65); border:1px solid rgba(17,24,39,0.08) }
+html.dark .setting-card { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+
+@media (max-width: 920px) { .two-col { grid-template-columns: 1fr } .settings-grid { grid-template-columns: 1fr 1fr } }
+@media (max-width: 560px) { .settings-grid { grid-template-columns: 1fr } }
+
+

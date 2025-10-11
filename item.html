@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Item – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/item.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/item.js"></script>
+  </head>
+  <body>
+    <div id="header" data-include="header.html"></div>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs">Home / <a href="category.html">Category</a> / <span>Item</span></div>
+      <div class="grid" style="grid-template-columns: 1.2fr 0.8fr; gap: 20px; align-items:start;" data-id="feat-1" data-price="4750000">
+        <section class="glass" style="padding:16px">
+          <div class="grid grid-3" id="gallery" style="grid-template-columns: 1fr 1fr 1fr">
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="Img/veh1.jpg" alt="Toyota Aqua 2018 1" />
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="https://picsum.photos/seed/aqua2/600/400" alt="Toyota Aqua 2018 2" />
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="https://picsum.photos/seed/aqua3/600/400" alt="Toyota Aqua 2018 3" />
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="https://picsum.photos/seed/aqua4/600/400" alt="Toyota Aqua 2018 4" />
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="https://picsum.photos/seed/aqua5/600/400" alt="Toyota Aqua 2018 5" />
+            <img class="fade-in" style="border-radius:12px" loading="lazy" src="https://picsum.photos/seed/aqua6/600/400" alt="Toyota Aqua 2018 6" />
+          </div>
+          <h1 id="item-title" style="margin-top:12px">Toyota Aqua 2018</h1>
+          <div class="badge">Verified Seller</div>
+          <p class="muted">Location: <span id="item-loc">Colombo</span></p>
+          <p>Well maintained Toyota Aqua 2018. Second owner, low mileage. Contact for details.</p>
+          <div style="height:240px; border-radius:14px; overflow:hidden; background:#e5e7eb; display:grid; place-items:center" class="fade-in">Map Placeholder</div>
+          <h3 style="margin-top:16px">Similar Listings</h3>
+          <div class="grid grid-3" id="similar">
+            <a class="listing-card fade-in" href="items/sim-1.html" data-id="sim-1" data-title="Toyota Aqua 2017" data-price="4450000" data-img="https://picsum.photos/seed/aqua2017/600/400">
+              <img class="thumb" loading="lazy" src="https://picsum.photos/seed/aqua2017/600/400" alt="Toyota Aqua 2017" />
+              <div class="content">
+                <div class="title">Toyota Aqua 2017</div>
+                <div class="meta"><span>Rs. 4,450,000</span><span>Colombo</span></div>
+              </div>
+            </a>
+            <a class="listing-card fade-in" href="items/sim-4.html" data-id="sim-4" data-title="Honda Fit 2016" data-price="5250000" data-img="https://picsum.photos/seed/fit/600/400">
+              <img class="thumb" loading="lazy" src="https://picsum.photos/seed/fit/600/400" alt="Honda Fit 2016" />
+              <div class="content">
+                <div class="title">Honda Fit 2016</div>
+                <div class="meta"><span>Rs. 5,250,000</span><span>Colombo</span></div>
+              </div>
+            </a>
+            <a class="listing-card fade-in" href="items/sim-5.html" data-id="sim-5" data-title="Mazda Axela 2014" data-price="5350000" data-img="https://picsum.photos/seed/axela/600/400">
+              <img class="thumb" loading="lazy" src="https://picsum.photos/seed/axela/600/400" alt="Mazda Axela 2014" />
+              <div class="content">
+                <div class="title">Mazda Axela 2014</div>
+                <div class="meta"><span>Rs. 5,350,000</span><span>Kandy</span></div>
+              </div>
+            </a>
+            <a class="listing-card fade-in" href="items/sim-2.html" data-id="sim-2" data-title="Toyota Prius 2015" data-price="6350000" data-img="https://picsum.photos/seed/prius/600/400">
+              <img class="thumb" loading="lazy" src="https://picsum.photos/seed/prius/600/400" alt="Toyota Prius 2015" />
+              <div class="content">
+                <div class="title">Toyota Prius 2015</div>
+                <div class="meta"><span>Rs. 6,350,000</span><span>Kandy</span></div>
+              </div>
+            </a>
+            <a class="listing-card fade-in" href="items/sim-3.html" data-id="sim-3" data-title="Nissan Note 2018" data-price="5150000" data-img="https://picsum.photos/seed/note/600/400">
+              <img class="thumb" loading="lazy" src="https://picsum.photos/seed/note/600/400" alt="Nissan Note 2018" />
+              <div class="content">
+                <div class="title">Nissan Note 2018</div>
+                <div class="meta"><span>Rs. 5,150,000</span><span>Galle</span></div>
+              </div>
+            </a>
+          </div>
+        </section>
+        <aside class="glass" style="padding:16px">
+          <div style="display:flex; align-items:center; gap:12px">
+            <div style="width:56px; height:56px; border-radius:14px; background:rgba(0,0,0,0.06)"></div>
+            <div>
+              <div style="font-weight:600">Ruwan Perera</div>
+              <div class="badge">✔ Verified</div>
+            </div>
+          </div>
+          <div style="margin-top:12px; font-size: 22px; font-weight:700" id="item-price">Rs. 4,750,000</div>
+          <div style="display:flex; gap:8px; margin-top:10px">
+            <a class="btn btn-primary" id="buyNow" style="flex:1">Buy Now</a>
+            <button class="btn btn-ghost" data-fav-id="feat-1">❤ Save</button>
+          </div>
+          <div style="display:grid; gap:6px; margin-top:12px">
+            <a class="btn btn-ghost" href="chat.html">Chat with seller</a>
+            <a class="btn btn-ghost" href="tel:+94770000000">Call seller</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <div id="footer" data-include="footer.html"></div>
+  </body>
+</html>
+
+

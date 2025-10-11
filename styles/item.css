@@ -1,0 +1,49 @@
+/* Item details */
+.badge { font-size: 12px; }
+
+/* New item meta layout */
+.item-meta { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:10px; margin-top:12px }
+.chip { display:flex; align-items:center; gap:6px; padding:8px 10px; border-radius:12px; background: rgba(255,255,255,0.6); border:1px solid rgba(17,24,39,0.08); font-size:13px }
+html.dark .chip { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+.chip b { font-weight:600; }
+
+.specs { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:10px; margin-top:12px }
+.spec { background: rgba(255,255,255,0.6); border:1px solid rgba(17,24,39,0.08); border-radius:12px; padding:10px }
+html.dark .spec { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+.spec .k { display:block; font-size:12px; opacity:.7 }
+.spec .v { display:block; font-weight:600 }
+
+/* Similar items sidebar */
+.similar { margin-top:14px }
+.similar h4 { margin:8px 0 8px; font-size:15px }
+.similar-list { display:grid; gap:8px }
+.similar-card { display:flex; gap:10px; padding:8px; border-radius:12px; background: rgba(255,255,255,0.6); border:1px solid rgba(17,24,39,0.08) }
+.similar-card img { width:72px; height:56px; border-radius:10px; object-fit:cover }
+.similar-card .title { font-weight:600; font-size:13px; line-height:1.2 }
+.similar-card .meta { font-size:12px; opacity:.75 }
+html.dark .similar-card { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.08) }
+
+/* Luxury Similar ads carousel */
+.similar-lux { margin-top:16px; padding:12px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55)); border:1px solid rgba(17,24,39,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+html.dark .similar-lux { background: linear-gradient(180deg, rgba(17,24,39,0.65), rgba(17,24,39,0.45)); border-color: rgba(255,255,255,0.06); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
+.similar-lux .sim-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
+.similar-lux .sim-title { font-weight:700; font-size:16px }
+.similar-lux .sim-nav { display:flex; gap:6px }
+.similar-lux .sim-arrow { width:28px; height:28px; border-radius:999px; border:1px solid rgba(17,24,39,0.15); background:rgba(255,255,255,0.8); cursor:pointer }
+html.dark .similar-lux .sim-arrow { background:rgba(17,24,39,0.6); border-color: rgba(255,255,255,0.1) }
+.similar-lux .sim-viewport { overflow:hidden }
+.similar-lux .sim-track { display:flex; transition: transform .4s ease; }
+.similar-lux .sim-slide { flex: 0 0 100%; display:grid; grid-template-columns: 1fr 1fr; gap:12px }
+.similar-lux .sim-card { display:flex; gap:10px; padding:10px; border-radius:14px; text-decoration:none; color:inherit; background: rgba(255,255,255,0.65); border:1px solid rgba(17,24,39,0.08) }
+html.dark .similar-lux .sim-card { background: rgba(17,24,39,0.55); border-color: rgba(255,255,255,0.06) }
+.similar-lux .sim-card .thumb { width:96px; height:72px; border-radius:12px; object-fit:cover }
+.similar-lux .sim-card .info { display:grid; gap:2px }
+.similar-lux .sim-card .title { font-weight:600; font-size:14px; line-height:1.2 }
+.similar-lux .sim-card .sub { font-size:12px; opacity:.7 }
+.similar-lux .sim-card .price { font-weight:700; color:#16a34a; font-size:13px }
+.similar-lux .sim-card .age { font-size:12px; opacity:.6 }
+.similar-lux .sim-dots { display:flex; gap:6px; justify-content:center; margin-top:10px }
+.similar-lux .dot { width:6px; height:6px; border-radius:999px; background:rgba(17,24,39,0.25); border:none }
+.similar-lux .dot.active { background:#16a34a }
+
+

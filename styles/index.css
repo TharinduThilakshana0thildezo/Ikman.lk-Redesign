@@ -1,0 +1,5 @@
+/* Home page specific styles */
+.hero .surface { border: 1px solid rgba(105, 174, 99, 0.279); }
+html.dark .hero .surface { border-color: rgba(125, 175, 126, 0.207); }
+
+

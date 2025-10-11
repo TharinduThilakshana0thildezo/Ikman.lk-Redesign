@@ -1,0 +1,25 @@
+/* Category page */
+.breadcrumbs { margin-bottom: 6px; }
+
+/* Category pagination (luxury theme reused) */
+.pagination.luxury { display:flex; gap:10px; align-items:center; justify-content:center; margin:22px 0; flex-wrap:wrap }
+.pagination.luxury .page-btn { 
+  appearance:none; border:0; cursor:pointer; padding:10px 14px; border-radius:999px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.35));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(255,255,255,0.5);
+  color:#0f172a; font-weight:600; letter-spacing: .2px;
+}
+html.dark .pagination.luxury .page-btn {
+  background: linear-gradient(135deg, rgba(30,41,59,0.8), rgba(15,23,42,0.6));
+  color: #e5e7eb; box-shadow: 0 6px 18px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.pagination.luxury .page-btn.active { 
+  background: linear-gradient(135deg, #6dd578, #43c750);
+  color:white; box-shadow: 0 10px 22px rgba(5, 230, 35, 0.35);
+}
+.pagination.luxury .page-btn.nav { padding:10px 12px }
+.pagination.luxury .page-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(255,255,255,0.6); }
+.pagination.luxury .page-btn.active:hover { transform:none }
+.pagination.luxury .page-btn[disabled] { opacity:.5; cursor:not-allowed }
+
+

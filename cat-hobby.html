@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hobby, Sport & Kids – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/category.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="index.html" class="brand" aria-label="Ikman.lk Home">
+          <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+          <span>ikman.lk</span>
+        </a>
+        <div class="searchbar search-wrap" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+          <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+          <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+          <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+          <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+          <a class="btn btn-ghost" href="profile.html">Profile</a>
+          <a class="btn btn-accent" href="post.html">Post Ad</a>
+        </div>
+      </div>
+    </header>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.AppCore && AppCore.initSearch) {
+          AppCore.initSearch('#global-search', '#search-suggest');
+        }
+      });
+    </script>
+    <main class="container" style="margin-top:20px">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <span>Hobby, Sport &amp; Kids</span></div>
+      <h1>Hobby, Sport &amp; Kids</h1>
+      <div class="grid grid-4" id="cat-grid" style="margin-top:10px">
+        <a class="listing-card fade-in" href="item.html?id=hob-1" data-id="hob-1" data-title="Mountain Bike" data-price="95000" data-location="Kandy" data-img="https://picsum.photos/seed/bike3/600/400">
+          <button class="fav-btn" data-fav-id="hob-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/bike3/600/400" alt="Mountain Bike" />
+          <div class="content">
+            <div class="title">Mountain Bike</div>
+            <div class="meta"><span>Rs. 95,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=hob-2" data-id="hob-2" data-title="Cricket Set" data-price="15000" data-location="Colombo" data-img="https://picsum.photos/seed/cricket/600/400">
+          <button class="fav-btn" data-fav-id="hob-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/cricket/600/400" alt="Cricket Set" />
+          <div class="content">
+            <div class="title">Cricket Set</div>
+            <div class="meta"><span>Rs. 15,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=hob-3" data-id="hob-3" data-title="Football Boots" data-price="18000" data-location="Galle" data-img="https://picsum.photos/seed/boots/600/400">
+          <button class="fav-btn" data-fav-id="hob-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/boots/600/400" alt="Football Boots" />
+          <div class="content">
+            <div class="title">Football Boots</div>
+            <div class="meta"><span>Rs. 18,000</span><span>Galle</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=hob-4" data-id="hob-4" data-title="Kids Bicycle" data-price="22000" data-location="Gampaha" data-img="https://picsum.photos/seed/kidbike/600/400">
+          <button class="fav-btn" data-fav-id="hob-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/kidbike/600/400" alt="Kids Bicycle" />
+          <div class="content">
+            <div class="title">Kids Bicycle</div>
+            <div class="meta"><span>Rs. 22,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+        <!-- Hobby, Sport & Kids Listings (30 items) -->
+        <a class="listing-card fade-in" href="item.html?id=hob-1" data-id="hob-1" data-title="Mountain Bike" data-price="95000" data-location="Kandy" data-img="https://picsum.photos/seed/bike3/600/400">
+          <button class="fav-btn" data-fav-id="hob-1">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/bike3/600/400" alt="Mountain Bike" />
+          <div class="content">
+            <div class="title">Mountain Bike</div>
+            <div class="meta"><span>Rs. 95,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-2" data-id="hob-2" data-title="Cricket Set" data-price="15000" data-location="Colombo" data-img="https://picsum.photos/seed/cricket/600/400">
+          <button class="fav-btn" data-fav-id="hob-2">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/cricket/600/400" alt="Cricket Set" />
+          <div class="content">
+            <div class="title">Cricket Set</div>
+            <div class="meta"><span>Rs. 15,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-3" data-id="hob-3" data-title="Football Boots" data-price="18000" data-location="Galle" data-img="https://picsum.photos/seed/boots/600/400">
+          <button class="fav-btn" data-fav-id="hob-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/boots/600/400" alt="Football Boots" />
+          <div class="content">
+            <div class="title">Football Boots</div>
+            <div class="meta"><span>Rs. 18,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-4" data-id="hob-4" data-title="Kids Bicycle" data-price="22000" data-location="Gampaha" data-img="https://picsum.photos/seed/kidbike/600/400">
+          <button class="fav-btn" data-fav-id="hob-4">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/kidbike/600/400" alt="Kids Bicycle" />
+          <div class="content">
+            <div class="title">Kids Bicycle</div>
+            <div class="meta"><span>Rs. 22,000</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-5" data-id="hob-5" data-title="Badminton Racket" data-price="8000" data-location="Kurunegala" data-img="https://picsum.photos/seed/racket/600/400">
+          <button class="fav-btn" data-fav-id="hob-5">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/racket/600/400" alt="Badminton Racket" />
+          <div class="content">
+            <div class="title">Badminton Racket</div>
+            <div class="meta"><span>Rs. 8,000</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-6" data-id="hob-6" data-title="Treadmill" data-price="145000" data-location="Colombo" data-img="https://picsum.photos/seed/treadmill/600/400">
+          <button class="fav-btn" data-fav-id="hob-6">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/treadmill/600/400" alt="Treadmill" />
+          <div class="content">
+            <div class="title">Treadmill</div>
+            <div class="meta"><span>Rs. 145,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-7" data-id="hob-7" data-title="Yoga Mat" data-price="3500" data-location="Matara" data-img="https://picsum.photos/seed/yogamat/600/400">
+          <button class="fav-btn" data-fav-id="hob-7">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/yogamat/600/400" alt="Yoga Mat" />
+          <div class="content">
+            <div class="title">Yoga Mat</div>
+            <div class="meta"><span>Rs. 3,500</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-8" data-id="hob-8" data-title="RC Drone" data-price="78000" data-location="Negombo" data-img="https://picsum.photos/seed/drone/600/400">
+          <button class="fav-btn" data-fav-id="hob-8">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/drone/600/400" alt="RC Drone" />
+          <div class="content">
+            <div class="title">RC Drone</div>
+            <div class="meta"><span>Rs. 78,000</span><span>Negombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-9" data-id="hob-9" data-title="Cricket Bat" data-price="12000" data-location="Kegalle" data-img="https://picsum.photos/seed/bat/600/400">
+          <button class="fav-btn" data-fav-id="hob-9">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/bat/600/400" alt="Cricket Bat" />
+          <div class="content">
+            <div class="title">Cricket Bat</div>
+            <div class="meta"><span>Rs. 12,000</span><span>Kegalle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-10" data-id="hob-10" data-title="Kids Toy Car" data-price="18000" data-location="Ratnapura" data-img="https://picsum.photos/seed/toycar/600/400">
+          <button class="fav-btn" data-fav-id="hob-10">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/toycar/600/400" alt="Kids Toy Car" />
+          <div class="content">
+            <div class="title">Kids Toy Car</div>
+            <div class="meta"><span>Rs. 18,000</span><span>Ratnapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-11" data-id="hob-11" data-title="PlayStation 4 Console" data-price="145000" data-location="Colombo" data-img="https://picsum.photos/seed/ps4/600/400">
+          <button class="fav-btn" data-fav-id="hob-11">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/ps4/600/400" alt="PlayStation 4 Console" />
+          <div class="content">
+            <div class="title">PlayStation 4 Console</div>
+            <div class="meta"><span>Rs. 145,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-12" data-id="hob-12" data-title="Guitar" data-price="25000" data-location="Kandy" data-img="https://picsum.photos/seed/guitar/600/400">
+          <button class="fav-btn" data-fav-id="hob-12">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/guitar/600/400" alt="Guitar" />
+          <div class="content">
+            <div class="title">Guitar</div>
+            <div class="meta"><span>Rs. 25,000</span><span>Kandy</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-13" data-id="hob-13" data-title="Table Tennis Set" data-price="9500" data-location="Matale" data-img="https://picsum.photos/seed/ttset/600/400">
+          <button class="fav-btn" data-fav-id="hob-13">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/ttset/600/400" alt="Table Tennis Set" />
+          <div class="content">
+            <div class="title">Table Tennis Set</div>
+            <div class="meta"><span>Rs. 9,500</span><span>Matale</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-14" data-id="hob-14" data-title="Skateboard" data-price="12000" data-location="Galle" data-img="https://picsum.photos/seed/skateboard/600/400">
+          <button class="fav-btn" data-fav-id="hob-14">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/skateboard/600/400" alt="Skateboard" />
+          <div class="content">
+            <div class="title">Skateboard</div>
+            <div class="meta"><span>Rs. 12,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-15" data-id="hob-15" data-title="Chess Board" data-price="4500" data-location="Kurunegala" data-img="https://picsum.photos/seed/chess/600/400">
+          <button class="fav-btn" data-fav-id="hob-15">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/chess/600/400" alt="Chess Board" />
+          <div class="content">
+            <div class="title">Chess Board</div>
+            <div class="meta"><span>Rs. 4,500</span><span>Kurunegala</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-16" data-id="hob-16" data-title="Kids Play Tent" data-price="7500" data-location="Anuradhapura" data-img="https://picsum.photos/seed/playtent/600/400">
+          <button class="fav-btn" data-fav-id="hob-16">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/playtent/600/400" alt="Kids Play Tent" />
+          <div class="content">
+            <div class="title">Kids Play Tent</div>
+            <div class="meta"><span>Rs. 7,500</span><span>Anuradhapura</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-17" data-id="hob-17" data-title="Swimming Goggles" data-price="2500" data-location="Colombo" data-img="https://picsum.photos/seed/goggles/600/400">
+          <button class="fav-btn" data-fav-id="hob-17">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/goggles/600/400" alt="Swimming Goggles" />
+          <div class="content">
+            <div class="title">Swimming Goggles</div>
+            <div class="meta"><span>Rs. 2,500</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-18" data-id="hob-18" data-title="Baby Walker" data-price="9500" data-location="Matara" data-img="https://picsum.photos/seed/walker/600/400">
+          <button class="fav-btn" data-fav-id="hob-18">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/walker/600/400" alt="Baby Walker" />
+          <div class="content">
+            <div class="title">Baby Walker</div>
+            <div class="meta"><span>Rs. 9,500</span><span>Matara</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-19" data-id="hob-19" data-title="Kite Set" data-price="1500" data-location="Batticaloa" data-img="https://picsum.photos/seed/kite/600/400">
+          <button class="fav-btn" data-fav-id="hob-19">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/kite/600/400" alt="Kite Set" />
+          <div class="content">
+            <div class="title">Kite Set</div>
+            <div class="meta"><span>Rs. 1,500</span><span>Batticaloa</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-20" data-id="hob-20" data-title="Scooter" data-price="18500" data-location="Gampaha" data-img="https://picsum.photos/seed/scooter/600/400">
+          <button class="fav-btn" data-fav-id="hob-20">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/scooter/600/400" alt="Scooter" />
+          <div class="content">
+            <div class="title">Scooter</div>
+            <div class="meta"><span>Rs. 18,500</span><span>Gampaha</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-21" data-id="hob-21" data-title="Carrom Board" data-price="6500" data-location="Badulla" data-img="https://picsum.photos/seed/carrom/600/400">
+          <button class="fav-btn" data-fav-id="hob-21">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/carrom/600/400" alt="Carrom Board" />
+          <div class="content">
+            <div class="title">Carrom Board</div>
+            <div class="meta"><span>Rs. 6,500</span><span>Badulla</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-22" data-id="hob-22" data-title="Lego Set" data-price="12000" data-location="Colombo" data-img="https://picsum.photos/seed/lego/600/400">
+          <button class="fav-btn" data-fav-id="hob-22">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/lego/600/400" alt="Lego Set" />
+          <div class="content">
+            <div class="title">Lego Set</div>
+            <div class="meta"><span>Rs. 12,000</span><span>Colombo</span></div>
+          </div>
+        </a>
+
+        <a class="listing-card fade-in" href="item.html?id=hob-23" data-id="hob-23" data-title="Basketball" data-price="4500" data-location="Nuwara Eliya" data-img="https://picsum.photos/seed/basketball/600/400">
+          <button class="fav-btn" data-fav-id="hob-23">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/basketball/600/400" alt="Basketball" />
+          <div class="content">
+            <div class="title">Basketball</div>
+            <div class="meta"><span>Rs. 4,500</span><span>Nuwara Eliya</span></div>
+          </div>
+        </a>
+        <a class="listing-card fade-in" href="item.html?id=hob-3" data-id="hob-3" data-title="Football Boots" data-price="18000" data-location="Galle" data-img="https://picsum.photos/seed/boots/600/400">
+          <button class="fav-btn" data-fav-id="hob-3">❤</button>
+          <img loading="lazy" class="thumb" src="https://picsum.photos/seed/boots/600/400" alt="Football Boots" />
+          <div class="content">
+            <div class="title">Football Boots</div>
+            <div class="meta"><span>Rs. 18,000</span><span>Galle</span></div>
+          </div>
+        </a>
+
+
+
+      </div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(6, minmax(0,1fr)); gap: 24px; align-items:start">
+          <div>
+            <h4 style="margin:0 0 10px">More from ikman</h4>
+            <nav class="links">
+              <a href="sell-fast.html">Sell Fast</a>
+              <a href="membership.html">Membership</a>
+              <a href="banner-ads.html">Banner Ads</a>
+              <a href="boost-ad.html">Boost Ad</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Help & Support</h4>
+            <nav class="links">
+              <a href="faq.html">FAQ</a>
+              <a href="stay-safe.html">Stay safe</a>
+              <a href="contact.html">Contact Us</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">About ikman</h4>
+            <nav class="links">
+              <a href="about.html">About Us</a>
+              <a href="careers.html">Careers</a>
+              <a href="terms.html">Terms and Conditions</a>
+              <a href="privacy.html">Privacy policy</a>
+              <a href="sitemap.html">Sitemap</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Blog & Guides</h4>
+            <nav class="links">
+              <a href="motorguide.html">MotorGuide LK</a>
+              <a href="propertyguide.html">PropertyGuide LK</a>
+              <a href="blog.html">Official Blog</a>
+            </nav>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Download our app</h4>
+            <div style="display:grid; gap:8px">
+              <a href="https://play.google.com" target="_blank" rel="noopener"> <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" width="156" height="46"/> </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener"> <img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=140x40" width="156" height="46"/> </a>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 10px">Other countries</h4>
+            <nav class="links">
+              <a href="bangladesh.html">🇧🇩 Bangladesh</a>
+            </nav>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:16px">© <span id="year"></span> ikman.lk – Modern Redesign</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+    <nav class="mobile-nav">
+      <div class="container">
+        <div class="mobile-bottom-nav">
+          <a href="index.html">🏠</a>
+          <a href="browse.html">🔍</a>
+          <a href="post.html">➕</a>
+          <a href="chat.html">💬</a>
+          <a href="profile.html">👤</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary floating-post" href="post.html">➕ Post Ad</a>
+  </body>
+</html>
+
+

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile Settings – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/profile.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/profile.js"></script>
+    <style>
+      :root {
+        /* Light theme variables */
+        --card-bg: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        --section-bg: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+        --input-bg: #ffffff;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --border-color: #e2e8f0;
+        --input-border: #e2e8f0;
+        --btn-secondary-bg: #f1f5f9;
+        --btn-ghost-bg: rgba(0,0,0,0.05);
+        --accent-color: #10b981;
+        --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
+      }
+      
+      [data-theme="dark"] {
+        /* Dark theme variables */
+        --card-bg: linear-gradient(135deg, #1f2937, #374151);
+        --section-bg: linear-gradient(135deg, #111827, #1f2937);
+        --input-bg: #374151;
+        --text-primary: #f9fafb;
+        --text-secondary: #9ca3af;
+        --border-color: #4b5563;
+        --input-border: #4b5563;
+        --btn-secondary-bg: #374151;
+        --btn-ghost-bg: rgba(255,255,255,0.1);
+        --accent-color: #10b981;
+        --shadow-lg: 0 20px 40px rgba(0,0,0,0.3);
+      }
+      
+      /* Enhanced professional styling */
+      .profile-hero {
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+      
+      .profile-hero:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg), 0 25px 50px rgba(0,0,0,0.15);
+      }
+      
+      .panel {
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+      
+      .panel:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-lg), 0 25px 50px rgba(0,0,0,0.15);
+      }
+      
+      .setting-card {
+        transition: all 0.3s ease;
+      }
+      
+      .setting-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      }
+      
+      .input:focus, .select:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        transform: translateY(-1px);
+      }
+      
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      }
+      
+      .avatar {
+        transition: all 0.3s ease;
+      }
+      
+      .avatar:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(16,185,129,0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header" data-include="header.html"></div>
+    <main class="container" style="margin-top:20px">
+      <section class="profile-hero" style="margin-bottom:24px; background:var(--card-bg, linear-gradient(135deg, #f8fafc, #e2e8f0)); border:1px solid var(--border-color, #e2e8f0); border-radius:20px; padding:24px; box-shadow:var(--shadow-lg, 0 20px 40px rgba(0,0,0,0.1))">
+        <div class="profile-left">
+          <div class="avatar" style="position:relative; overflow:visible; width:80px; height:80px; border-radius:20px; background:linear-gradient(135deg, #10b981, #059669); display:flex; align-items:center; justify-content:center; color:white; font-size:28px; font-weight:700; box-shadow:0 8px 25px rgba(16,185,129,0.3)">
+            ⚙️
+          </div>
+          <div>
+            <div class="name-row">
+              <h2 style="margin:0; color:var(--text-primary, #1f2937); font-size:24px; font-weight:700">Profile Settings</h2>
+            </div>
+            <div style="color:var(--text-secondary, #6b7280); font-size:15px; margin-top:6px">Configure your preferences and account controls</div>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <a class="btn btn-ghost" href="profile.html" style="background:var(--btn-secondary-bg, #f1f5f9); color:var(--text-primary, #1f2937); font-weight:600; border:1px solid var(--border-color, #e2e8f0); padding:12px 20px; border-radius:12px; transition:all 0.3s ease">👤 Back to Profile</a>
+        </div>
+      </section>
+
+      <section id="notifications" class="panel" style="margin-top:20px; background:var(--card-bg, linear-gradient(135deg, #f8fafc, #e2e8f0)); border:1px solid var(--border-color, #e2e8f0); border-radius:20px; padding:24px; box-shadow:var(--shadow-lg, 0 20px 40px rgba(0,0,0,0.1))">
+        <h3 style="margin:0 0 20px; color:var(--text-primary, #1f2937); font-size:20px; font-weight:700">🔔 Notifications</h3>
+        <div class="settings-grid" style="gap:16px">
+          <label class="setting-card" style="display:flex;align-items:center;gap:16px; padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0); cursor:pointer; transition:all 0.3s ease">
+            <input type="checkbox" checked style="width:20px; height:20px; accent-color:var(--accent-color, #10b981)"> 
+            <div style="flex:1">
+              <span style="font-weight:600; color:var(--text-primary, #1f2937); display:block; margin-bottom:4px">📧 Email alerts</span>
+              <span style="font-size:14px; color:var(--text-secondary, #6b7280)">Get notified about new messages and updates</span>
+            </div>
+          </label>
+          <label class="setting-card" style="display:flex;align-items:center;gap:16px; padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0); cursor:pointer; transition:all 0.3s ease">
+            <input type="checkbox" checked style="width:20px; height:20px; accent-color:var(--accent-color, #10b981)"> 
+            <div style="flex:1">
+              <span style="font-weight:600; color:var(--text-primary, #1f2937); display:block; margin-bottom:4px">📱 Push notifications</span>
+              <span style="font-size:14px; color:var(--text-secondary, #6b7280)">Receive instant notifications on your device</span>
+            </div>
+          </label>
+          <label class="setting-card" style="display:flex;align-items:center;gap:16px; padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0); cursor:pointer; transition:all 0.3s ease">
+            <input type="checkbox" style="width:20px; height:20px; accent-color:var(--accent-color, #10b981)"> 
+            <div style="flex:1">
+              <span style="font-weight:600; color:var(--text-primary, #1f2937); display:block; margin-bottom:4px">💬 SMS messages</span>
+              <span style="font-size:14px; color:var(--text-secondary, #6b7280)">Get text messages for important updates</span>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <section id="privacy" class="panel" style="margin-top:16px; background:var(--card-bg, linear-gradient(135deg, #f8fafc, #e2e8f0)); border:1px solid var(--border-color, #e2e8f0); border-radius:20px; padding:24px; box-shadow:var(--shadow-lg, 0 20px 40px rgba(0,0,0,0.1));">
+        <h3 style="margin:0 0 20px; color:var(--text-primary, #1f2937); font-size:20px; font-weight:700">🔒 Privacy</h3>
+        <div class="settings-grid" style="gap:16px">
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">👁️ Profile visibility</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--text-secondary, #6b7280)">Choose who can view your profile</div>
+            <select class="select" style="background:var(--input-bg, #ffffff); border:2px solid var(--input-border, #e2e8f0); border-radius:12px; padding:12px 14px; font-size:14px; width:100%; color:var(--text-primary, #1f2937)">
+              <option>Public</option>
+              <option>Only logged-in users</option>
+              <option>Private</option>
+            </select>
+          </div>
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">🟢 Show online status</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--text-secondary, #6b7280)">Display when you're active</div>
+            <select class="select" style="background:var(--input-bg, #ffffff); border:2px solid var(--input-border, #e2e8f0); border-radius:12px; padding:12px 14px; font-size:14px; width:100%; color:var(--text-primary, #1f2937)">
+              <option>On</option>
+              <option>Off</option>
+            </select>
+          </div>
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">💰 Allow offers</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--text-secondary, #6b7280)">Permit buyers to send offers</div>
+            <select class="select" style="background:var(--input-bg, #ffffff); border:2px solid var(--input-border, #e2e8f0); border-radius:12px; padding:12px 14px; font-size:14px; width:100%; color:var(--text-primary, #1f2937)">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section id="security" class="panel" style="margin-top:16px; background:var(--card-bg, linear-gradient(135deg, #f8fafc, #e2e8f0)); border:1px solid var(--border-color, #e2e8f0); border-radius:20px; padding:24px; box-shadow:var(--shadow-lg, 0 20px 40px rgba(0,0,0,0.1));">
+        <h3 style="margin:0 0 20px; color:var(--text-primary, #1f2937); font-size:20px; font-weight:700">🛡️ Security</h3>
+        <div class="grid grid-2" style="gap:20px">
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">🔑 Password</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--text-secondary, #6b7280)">Update your password regularly</div>
+            <div style="display:flex; gap:12px">
+              <input class="input" type="password" placeholder="New password" style="background:var(--input-bg, #ffffff); border:2px solid var(--input-border, #e2e8f0); border-radius:12px; padding:12px 14px; font-size:14px; flex:1; color:var(--text-primary, #1f2937)" />
+              <button class="btn btn-primary btn-sm" style="background:linear-gradient(135deg, #10b981, #059669); color:white; font-weight:600; padding:12px 16px; border-radius:12px; border:none">Update</button>
+            </div>
+          </div>
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">🔐 Two-factor authentication</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--text-secondary, #6b7280)">Additional security for your account</div>
+            <select class="select" style="background:var(--input-bg, #ffffff); border:2px solid var(--input-border, #e2e8f0); border-radius:12px; padding:12px 14px; font-size:14px; width:100%; color:var(--text-primary, #1f2937)">
+              <option>Off</option>
+              <option>App (TOTP)</option>
+              <option>SMS</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top:16px; background:var(--card-bg, linear-gradient(135deg, #f8fafc, #e2e8f0)); border:1px solid var(--border-color, #e2e8f0); border-radius:20px; padding:24px; box-shadow:var(--shadow-lg, 0 20px 40px rgba(0,0,0,0.1));">
+        <h3 style="margin:0 0 20px; color:var(--text-primary, #1f2937); font-size:20px; font-weight:700">🔗 Connected accounts</h3>
+        <div class="settings-grid" style="gap:16px">
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">🔍 Google</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--text-secondary, #6b7280)">Not connected</div>
+            <button class="btn btn-outline btn-sm" style="background:var(--btn-secondary-bg, #f1f5f9); border:1px solid var(--border-color, #e2e8f0); color:var(--accent-color, #10b981); font-weight:600; padding:10px 16px; border-radius:12px">Connect</button>
+          </div>
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">📘 Facebook</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--accent-color, #10b981); font-weight:600">Connected</div>
+            <button class="btn btn-outline btn-sm" style="background:var(--btn-secondary-bg, #f1f5f9); border:1px solid #ef4444; color:#ef4444; font-weight:600; padding:10px 16px; border-radius:12px">Disconnect</button>
+          </div>
+          <div class="setting-card" style="padding:20px; background:var(--section-bg, linear-gradient(135deg, #f1f5f9, #e2e8f0)); border-radius:16px; border:1px solid var(--border-color, #e2e8f0)">
+            <strong style="color:var(--text-primary, #1f2937); font-size:16px; display:block; margin-bottom:8px">🍎 Apple</strong>
+            <div style="margin-bottom:12px; font-size:14px; color:var(--text-secondary, #6b7280)">Not connected</div>
+            <button class="btn btn-outline btn-sm" style="background:var(--btn-secondary-bg, #f1f5f9); border:1px solid var(--border-color, #e2e8f0); color:var(--accent-color, #10b981); font-weight:600; padding:10px 16px; border-radius:12px">Connect</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer" data-include="footer.html"></div>
+  </body>
+ </html>
+
+

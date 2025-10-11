@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login / Signup – ikman.lk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+    <script defer src="scripts/core.js"></script>
+    <script defer src="scripts/auth.js"></script>
+    <style>
+      :root {
+        --auth-bg: linear-gradient(135deg, #052303 0%, #127819 100%);
+        --auth-card-bg: rgba(102, 153, 88, 0.511);
+        --auth-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        --auth-border: rgba(255, 255, 255, 0.2);
+      }
+      
+      [data-theme="dark"] {
+        --auth-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        --auth-card-bg: rgba(31, 41, 55, 0.95);
+        --auth-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        --auth-border: rgba(255, 255, 255, 0.1);
+      }
+      
+      .auth-container {
+        min-height: 100vh;
+        background: var(--auth-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .auth-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        pointer-events: none;
+      }
+      
+      .auth-card {
+        background: var(--auth-card-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--auth-border);
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: var(--auth-shadow);
+        width: 100%;
+        max-width: 450px;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+      
+      .auth-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      }
+      
+      .auth-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      
+      .auth-logo {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+      }
+      
+      .auth-logo img {
+        width: 36px;
+        height: 36px;
+        filter: brightness(0) invert(1);
+      }
+      
+      .auth-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        background: linear-gradient(135deg, #1f2937, #374151);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .auth-subtitle {
+        color: #6b7280;
+        font-size: 16px;
+        margin: 0;
+      }
+      
+      .security-badge {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: rgb(255, 255, 255);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+      
+      .tabs {
+        display: flex;
+        gap: 4px;
+        background: rgba(0, 0, 0, 0.04);
+        padding: 6px;
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        margin: 24px 0;
+      }
+      
+      [data-theme="dark"] .tabs {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+      
+      .tab {
+        flex: 1;
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: none;
+        background: transparent;
+        color: #6b7280;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      
+      .tab.active {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: rgb(109, 239, 34);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+      
+      .tab:hover:not(.active) {
+        background: rgba(16, 185, 129, 0.1);
+        color: #10b981;
+      }
+      
+      .panel {
+        display: grid;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      
+      .input-group {
+        position: relative;
+      }
+      
+      .input-label {
+        display: block;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      
+      .input {
+        width: 100%;
+        padding: 16px 20px;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background: #ffffff;
+      }
+      
+      .input:focus {
+        outline: none;
+        border-color: #10b981;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        transform: translateY(-1px);
+      }
+      
+      .password-toggle {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #6b7280;
+        font-size: 18px;
+        padding: 4px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+      
+      .password-toggle:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: #10b981;
+      }
+      
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 16px 0;
+      }
+      
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+      
+      .checkbox-group input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #10b981;
+        cursor: pointer;
+      }
+      
+      .forgot-link {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+      
+      .forgot-link:hover {
+        color: #059669;
+        text-decoration: underline;
+      }
+      
+      .btn-primary {
+        width: 100%;
+        padding: 16px 24px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+      
+      .error-message {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #dc2626;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        display: none;
+        margin-top: 16px;
+      }
+      
+      .divider {
+        display: flex;
+        align-items: center;
+        margin: 24px 0;
+        color: #6b7280;
+        font-size: 14px;
+      }
+      
+      .divider::before,
+      .divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: #e5e7eb;
+      }
+      
+      .divider span {
+        padding: 0 16px;
+      }
+      
+      .social-buttons {
+        display: grid;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      
+      .btn-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 14px 20px;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        background: #ffffff;
+        color: #374151;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-social:hover {
+        border-color: #10b981;
+        background: rgba(16, 185, 129, 0.05);
+        transform: translateY(-1px);
+      }
+      
+      .btn-google:hover {
+        border-color: #ea4335;
+        background: rgba(234, 67, 53, 0.05);
+      }
+      
+      .btn-facebook:hover {
+        border-color: #1877f2;
+        background: rgba(24, 119, 242, 0.05);
+      }
+      
+      .btn-apple:hover {
+        border-color: #000000;
+        background: rgba(0, 0, 0, 0.05);
+      }
+      
+      .terms-text {
+        text-align: center;
+        color: #6b7280;
+        font-size: 14px;
+        margin-top: 16px;
+        line-height: 1.5;
+      }
+      
+      .terms-text a {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      
+      .terms-text a:hover {
+        text-decoration: underline;
+      }
+      
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      
+      @media (max-width: 768px) {
+        .auth-card {
+          padding: 24px;
+          margin: 10px;
+        }
+        
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        
+        .remember-forgot {
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-container">
+      <section class="auth-card">
+        <div class="auth-header">
+          <div class="auth-logo">
+            <img src="assets/ikman-logo-mark.svg" alt="ikman.lk" />
+          </div>
+          <h1 class="auth-title">Welcome Back</h1>
+          <p class="auth-subtitle">Sign in to your account or create a new one</p>
+          <div class="security-badge">
+            🔒 Secure • SSL Protected
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="login" role="tab" aria-selected="true">Sign In</button>
+          <button class="tab" data-tab="register" role="tab" aria-selected="false">Create Account</button>
+        </div>
+
+        <form id="form-login" class="panel" data-panel="login" autocomplete="on">
+          <div class="input-group">
+            <label class="input-label" for="login-id">📧 Email or Phone Number</label>
+            <input id="login-id" class="input" placeholder="Enter your email or phone" required />
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label" for="login-pass">🔑 Password</label>
+            <input id="login-pass" class="input" type="password" placeholder="Enter your password" required />
+            <button type="button" class="password-toggle" id="togglePass" title="Show/Hide Password">👁️</button>
+          </div>
+
+          <div class="remember-forgot">
+            <label class="checkbox-group">
+              <input type="checkbox" id="remember" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link" id="forgot">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary">Sign In</button>
+          <div id="login-error" class="error-message">Invalid credentials, please try again.</div>
+
+          <div class="divider">
+            <span>Or continue with</span>
+          </div>
+
+          <div class="social-buttons">
+            <a href="#" class="btn-social btn-google" data-social="google">
+              <span>🔍</span>
+              <span>Google</span>
+            </a>
+            <a href="#" class="btn-social btn-facebook" data-social="facebook">
+              <span>📘</span>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="btn-social btn-apple" data-social="apple">
+              <span>🍎</span>
+              <span>Apple</span>
+            </a>
+          </div>
+        </form>
+
+        <form id="form-register" class="panel hidden" data-panel="register" autocomplete="on">
+          <div class="grid-2">
+            <div class="input-group">
+              <label class="input-label" for="reg-name">👤 Full Name</label>
+              <input id="reg-name" class="input" placeholder="Your full name" required />
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="reg-phone">📱 Phone Number</label>
+              <input id="reg-phone" class="input" type="tel" placeholder="07X XXX XXXX" required />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="reg-email">📧 Email Address</label>
+            <input id="reg-email" class="input" type="email" placeholder="your.email@example.com" required />
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="reg-pass">🔑 Password</label>
+            <input id="reg-pass" class="input" type="password" placeholder="Minimum 8 characters" minlength="8" required />
+            <button type="button" class="password-toggle" id="toggleRegPass" title="Show/Hide Password">👁️</button>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="reg-loc">📍 Location</label>
+            <input id="reg-loc" class="input" placeholder="City / Area (Optional)" />
+          </div>
+
+          <div class="input-group">
+            <label class="checkbox-group">
+              <input type="checkbox" id="terms" required />
+              <span>I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary">Create Account</button>
+          <div id="register-error" class="error-message">Please fill in all required fields.</div>
+
+          <div class="divider">
+            <span>Or sign up with</span>
+          </div>
+
+          <div class="social-buttons">
+            <a href="#" class="btn-social btn-google" data-social="google">
+              <span>🔍</span>
+              <span>Google</span>
+            </a>
+            <a href="#" class="btn-social btn-facebook" data-social="facebook">
+              <span>📘</span>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="btn-social btn-apple" data-social="apple">
+              <span>🍎</span>
+              <span>Apple</span>
+            </a>
+          </div>
+        </form>
+      </section>
+    </div>
+    
+
+    <script>
+      // Tab switching functionality
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+          const targetTab = this.dataset.tab;
+          
+          // Update tab states
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Update panel visibility
+          document.querySelectorAll('.panel').forEach(p => p.classList.add('hidden'));
+          document.querySelector(`[data-panel="${targetTab}"]`).classList.remove('hidden');
+          
+          // Clear errors
+          document.querySelectorAll('.error-message').forEach(e => e.style.display = 'none');
+        });
+      });
+
+      // Password toggle functionality
+      function togglePassword(inputId, toggleId) {
+        const input = document.getElementById(inputId);
+        const toggle = document.getElementById(toggleId);
+        
+        if (input.type === 'password') {
+          input.type = 'text';
+          toggle.textContent = '🙈';
+        } else {
+          input.type = 'password';
+          toggle.textContent = '👁️';
+        }
+      }
+
+      document.getElementById('togglePass')?.addEventListener('click', () => togglePassword('login-pass', 'togglePass'));
+      document.getElementById('toggleRegPass')?.addEventListener('click', () => togglePassword('reg-pass', 'toggleRegPass'));
+
+      // Form submission handling
+      document.getElementById('form-login')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('login-id').value;
+        const password = document.getElementById('login-pass').value;
+        
+        if (email && password) {
+          // Simulate login process
+          const errorDiv = document.getElementById('login-error');
+          errorDiv.style.display = 'block';
+          errorDiv.textContent = 'Login successful! Redirecting...';
+          errorDiv.style.background = '#f0fdf4';
+          errorDiv.style.borderColor = '#bbf7d0';
+          errorDiv.style.color = '#166534';
+          
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1500);
+        }
+      });
+
+      document.getElementById('form-register')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('reg-name').value;
+        const phone = document.getElementById('reg-phone').value;
+        const email = document.getElementById('reg-email').value;
+        const password = document.getElementById('reg-pass').value;
+        const terms = document.getElementById('terms').checked;
+        
+        if (name && phone && email && password && terms) {
+          // Simulate registration process
+          const errorDiv = document.getElementById('register-error');
+          errorDiv.style.display = 'block';
+          errorDiv.textContent = 'Account created successfully! Redirecting...';
+          errorDiv.style.background = '#f0fdf4';
+          errorDiv.style.borderColor = '#bbf7d0';
+          errorDiv.style.color = '#166534';
+          
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1500);
+        } else {
+          const errorDiv = document.getElementById('register-error');
+          errorDiv.style.display = 'block';
+          errorDiv.textContent = 'Please fill in all required fields and accept the terms.';
+        }
+      });
+
+      // Social login simulation
+      document.querySelectorAll('[data-social]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const provider = this.dataset.social;
+          alert(`Social login with ${provider} would be implemented here.`);
+        });
+      });
+
+      // Forgot password
+      document.getElementById('forgot')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        const email = prompt('Enter your email address to reset password:');
+        if (email) {
+          alert(`Password reset link sent to ${email}`);
+        }
+      });
+    </script>
+  </body>
+</html>
+
+

@@ -1,0 +1,32 @@
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="brand" aria-label="Ikman.lk Home">
+      <img src="assets/ikman-logo-mark.svg" alt="ikman" width="36" height="36" style="border-radius:10px" />
+      <span>ikman.lk</span>
+    </a>
+    <div class="searchbar search-wrap" role="search">
+      <span aria-hidden="true">🔎</span>
+      <input id="global-search" type="text" placeholder="What are you looking for?" aria-label="Search" />
+      <button class="btn btn-primary" onclick="location.href='browse.html'">Search</button>
+      <div id="search-suggest" class="glass hidden" style="position:absolute; margin-top:52px; width:clamp(280px,60vw,700px); border-radius:14px; overflow:hidden;">
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+      <a class="icon-btn" href="chat.html" title="Messages">💬</a>
+      <a class="icon-btn" href="cart.html" title="Cart" style="position:relative">🛒<span id="cart-count" class="badge" style="position:absolute; top:-8px; right:-8px; font-size:11px; display:none">0</span></a>
+      <a class="btn btn-ghost" href="profile.html">Profile</a>
+      <a class="btn btn-accent" href="post.html">Post Ad</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    if (window.AppCore && AppCore.initSearch) {
+      AppCore.initSearch('#global-search', '#search-suggest');
+    }
+  });
+</script>
+
+

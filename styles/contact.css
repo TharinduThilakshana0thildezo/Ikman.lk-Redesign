@@ -1,0 +1,6 @@
+/* Contact page */
+@media (max-width: 860px) {
+  main.container > section.grid { grid-template-columns: 1fr !important; }
+}
+
+
