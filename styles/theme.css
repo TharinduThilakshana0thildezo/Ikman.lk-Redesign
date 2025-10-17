@@ -2,12 +2,12 @@
 
 .topbar {
   position: sticky; top: 0; z-index: 100;
-  background: linear-gradient( to bottom, rgba(29, 204, 10, 0.82), rgba(83, 168, 106, 0.67) );
+  background: linear-gradient( to bottom, rgba(26, 156, 131, 1.0),  rgba(107, 173, 159, 0.632) );
   backdrop-filter: var(--backdrop);
   -webkit-backdrop-filter: var(--backdrop);
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
-html.dark .topbar { background: linear-gradient( to bottom, rgba(4, 75, 3, 0.575), rgba(6, 158, 44, 0.57) ); }
+html.dark .topbar { background: linear-gradient( to bottom, rgba(26, 156, 131, 1.0), rgba(26, 156, 130, 0.208) ); }
 
 .topbar-inner { display: flex; align-items: center; gap: 16px; padding: 12px 0; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.2px; }
@@ -26,7 +26,7 @@ html.dark .icon-btn { background: rgba(255,255,255,0.04); border-color: rgba(255
 .footer .links { display: flex; flex-wrap: wrap; gap: 16px; }
 
 .hero { padding: 48px 0 24px; position: relative; }
-.hero .surface { padding: 24px; border-radius: var(--radius-lg); background: radial-gradient(1200px 200px at center top, rgba(9, 226, 23, 0.384), transparent), var(--color-surface); backdrop-filter: var(--backdrop); box-shadow: var(--shadow-md); }
+.hero .surface { padding: 24px; border-radius: var(--radius-lg); background: radial-gradient(1200px 200px at center top, rgba(26, 156, 131, 1.0), transparent), var(--color-surface); backdrop-filter: var(--backdrop); box-shadow: var(--shadow-md); }
 .hero h1 { margin: 0 0 8px; font-size: 40px; line-height: 1.1; }
 .hero p { margin: 0 0 16px; }
 .hero .search-xl { display: flex; gap: 10px; background: rgba(121, 200, 105, 0.078); border-radius: 999px; padding: 8px; border: 1px solid rgba(0,0,0,0.06); }

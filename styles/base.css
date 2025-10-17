@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #00A859;
+  --color-primary: #1A9C83;
   --color-accent: #F39C12;
   --color-bg: #F9FAFB;
   --color-surface: rgba(255,255,255,0.52); /* more transparent glass */
@@ -70,7 +70,7 @@ input, select, textarea { font: inherit; color: inherit; }
   border: 1px solid transparent;
   transition: all var(--transition-fast);
 }
-.btn-primary { background: linear-gradient(135deg, var(--color-primary), #27d07e); color: #fff; box-shadow: 0 12px 28px rgba(0,168,89,0.28); }
+.btn-primary { background: linear-gradient(135deg, var(--color-primary), #1A9C83); color: #fff; box-shadow: 0 12px 28px rgba(0,168,89,0.28); }
 .btn-primary:hover { filter: brightness(0.95); transform: translateY(-1px); }
 .btn-ghost { background: transparent; border-color: rgba(0, 0, 0, 0.08); }
 html.dark .btn-ghost { border-color: rgba(255,255,255,0.12); }
